@@ -1,4 +1,5 @@
 """OWL-on-FHIR"""
-from owl_on_fhir import convert
+from owl_on_fhir.__main__ import cli
 
-convert()
+
+cli()
