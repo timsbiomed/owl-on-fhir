@@ -2,4 +2,5 @@
 from owl_on_fhir.__main__ import cli
 
 
-cli()
+if __name__ == '__main__':
+    cli()

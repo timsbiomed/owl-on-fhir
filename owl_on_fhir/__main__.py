@@ -3,7 +3,6 @@ import json
 import os
 import subprocess
 from argparse import ArgumentParser
-from collections import OrderedDict
 from typing import Dict, List
 
 import curies
@@ -17,65 +16,12 @@ from urllib.parse import urlparse
 
 # Vars
 # - Vars: Static
-BIN_DIR = os.path.dirname(os.path.realpath(__file__))
-PROJECT_DIR = os.path.join(BIN_DIR, '..')
+SRC_DIR = os.path.dirname(os.path.realpath(__file__))
+BIN_DIR = SRC_DIR
+PROJECT_DIR = os.path.join(SRC_DIR, '..')
 CACHE_DIR = os.path.join(PROJECT_DIR, 'cache')
-OUTDIR = os.path.join(PROJECT_DIR, 'output')
 ROBOT_PATH = os.path.join(BIN_DIR, 'robot')
 INTERMEDIARY_TYPES = ['obographs', 'semsql']
-
-# - Vars: Config
-# TODO: owl-on-fhir-content needs some configuration / setup instructions, or a git submodule
-OWL_ON_FHIR_CONTENT_REPO_PATH = os.path.join(PROJECT_DIR, '..', 'owl-on-fhir-content')
-# todo: consider 1+ changes: (i) external config JSON / env vars, (ii) accept overrides from CLI
-FAVORITE_DEFAULTS = {
-    'out_dir': os.path.join(OWL_ON_FHIR_CONTENT_REPO_PATH, 'output'),
-    'intermediary_outdir': os.path.join(OWL_ON_FHIR_CONTENT_REPO_PATH, 'input'),
-    'include_all_predicates': True,
-    'intermediary_type': 'obographs',
-    'use_cached_intermediaries': True,
-    'retain_intermediaries': True,
-    'convert_intermediaries_only': False,
-}
-FAVORITE_ONTOLOGIES = OrderedDict({
-    'mondo': {
-        'download_url': 'https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl',
-        'code_system_url': 'http://purl.obolibrary.org/obo/mondo.owl',
-        'input_path': os.path.join(OWL_ON_FHIR_CONTENT_REPO_PATH, 'input', 'mondo.owl'),
-        'code_system_id': 'mondo',
-        'native_uri_stems': ['http://purl.obolibrary.org/obo/MONDO_'],
-    },
-    'comp-loinc': {
-        'download_url': 'https://github.com/loinc/comp-loinc/releases/latest/download/merged_reasoned_loinc.owl',
-        'code_system_url': 'https://github.com/loinc/comp-loinc/releases/latest/download/merged_reasoned_loinc.owl',
-        'input_path': os.path.join(OWL_ON_FHIR_CONTENT_REPO_PATH, 'input', 'comploinc.owl'),
-        'code_system_id': 'comp-loinc',
-        'native_uri_stems': ['https://loinc.org/'],
-    },
-    'HPO': {
-        'download_url': 'https://github.com/obophenotype/human-phenotype-ontology/releases/latest/download/hp-full.owl',
-        'code_system_url': 'http://purl.obolibrary.org/obo/hp.owl',
-        'input_path': os.path.join(OWL_ON_FHIR_CONTENT_REPO_PATH, 'input', 'hpo.owl'),
-        'code_system_id': 'HPO',
-        'native_uri_stems': ['http://purl.obolibrary.org/obo/HP_'],
-    },
-    'rxnorm': {
-        'download_url': 'https://data.bioontology.org/'
-                        'ontologies/RXNORM/submissions/23/download?apikey=8b5b7825-538d-40e0-9e9e-5ab9274a9aeb',
-        'code_system_url': 'http://purl.bioontology.org/ontology/RXNORM',
-        'input_path': os.path.join(OWL_ON_FHIR_CONTENT_REPO_PATH, 'input', 'RXNORM.ttl'),
-        'code_system_id': 'rxnorm',
-        'native_uri_stems': ['http://purl.bioontology.org/ontology/RXNORM/'],
-    },
-    'sequence-ontology': {
-        'download_url': 'https://data.bioontology.org/'
-                        'ontologies/SO/submissions/304/download?apikey=8b5b7825-538d-40e0-9e9e-5ab9274a9aeb',
-        'code_system_url': 'http://purl.bioontology.org/ontology/SO',
-        'input_path': os.path.join(OWL_ON_FHIR_CONTENT_REPO_PATH, 'input', 'so.owl'),
-        'code_system_id': 'sequence-ontology',
-        'native_uri_stems': ['http://purl.obolibrary.org/obo/SO_'],
-    },
-})
 
 
 # Functions
@@ -160,7 +106,7 @@ def owl_to_obograph(inpath: str, native_uri_stems: List[str] = None, use_cache=F
     # todo: TTL and RDF also supported? not just OWL?"""
     # Vars
     outpath = os.path.join(CACHE_DIR, inpath + '.obographs.json')
-    outdir = os.path.dirname(outpath)
+    outdir = os.path.realpath(os.path.dirname(outpath))
     command = f'java -jar {ROBOT_PATH}.jar convert -i {inpath} -o {outpath} --format json'
 
     # Convert
@@ -168,7 +114,7 @@ def owl_to_obograph(inpath: str, native_uri_stems: List[str] = None, use_cache=F
         os.makedirs(outdir)
     if use_cache and os.path.exists(outpath):
         return outpath
-    # todo: Switch back to `bioontologies` when complete: https://github.com/bioprag    matics/bioontologies/issues/9
+    # todo: Switch back to `bioontologies` when complete: https://github.com/biopragmatics/bioontologies/issues/9
     # from bioontologies import robot
     # parse_results: robot.ParseResults = robot.convert_to_obograph_local(inpath)
     # graph = parse_results.graph_document.graphs[0]
@@ -255,17 +201,21 @@ def semsql_to_fhir(inpath: str, out_dir: str, out_filename: str = None, include_
 
 
 def owl_to_fhir(
-    input_path_or_url: str, out_dir: str = OUTDIR, out_filename: str = None, include_all_predicates=False,
+    input_path_or_url: str, out_dir: str = None, out_filename: str = None, include_only_critical_predicates=False,
     retain_intermediaries=False, intermediary_type=['obographs', 'semsql'][0], use_cached_intermediaries=False,
     intermediary_outdir: str = None, convert_intermediaries_only=False, native_uri_stems: List[str] = None,
     code_system_id: str = None, code_system_url: str = None, dev_oak_path: str = None,
     dev_oak_interpreter_path: str = None
 ) -> str:
     """Run conversion"""
+    include_all_predicates = not include_only_critical_predicates
+
+    if not os.path.exists(CACHE_DIR):
+        os.makedirs(CACHE_DIR)
+
     # Download if necessary & determine outpaths
     # todo: this section w/ urls, names, and IDs has too many possible branches and is error prone. simplify by
     #  updating CLI params to require url or path separately, and maybe require codesystem id
-    intermediary_outdir = intermediary_outdir if intermediary_outdir else out_dir
     input_path = input_path_or_url
     url = None
     maybe_url = urlparse(input_path_or_url)
@@ -280,6 +230,9 @@ def owl_to_fhir(
         out_filename = f'CodeSystem-{code_system_id}.json'
     if not code_system_id and out_filename and out_filename.startswith('CodeSystem-'):
         code_system_id = out_filename.split('-')[1].split('.')[0]
+    input_path = input_path if os.path.exists(input_path) else os.path.join(os.getcwd(), input_path)
+    out_dir = os.path.realpath(out_dir if out_dir else os.path.dirname(input_path))
+    intermediary_outdir = intermediary_outdir if intermediary_outdir else out_dir
 
     # Preprocessing: Special cases
     if 'rxnorm' in input_path.lower() or 'rxnorm' in out_filename.lower():
@@ -316,63 +269,35 @@ def owl_to_fhir(
     return os.path.join(out_dir, out_filename)
 
 
-def _run_favorites(
-    use_cached_intermediaries: bool = None, retain_intermediaries: bool = None, include_all_predicates: bool = None,
-    intermediary_type: str = None, out_dir: str = None, intermediary_outdir: str = None,
-    convert_intermediaries_only: bool = None, dev_oak_path: str = None, dev_oak_interpreter_path: str = None,
-    favorites: Dict = FAVORITE_ONTOLOGIES
-):
-    """Convert favorite ontologies"""
-    kwargs = {k: v for k, v in locals().items() if v is not None and not k.startswith('__') and k != 'favorites'}
-    fails = []
-    successes = []
-    n = len(favorites)
-    i = 0
-    for d in favorites.values():
-        i += 1
-        print('Converting {} of {}: {}'.format(i, n, d['code_system_id']))
-        try:
-            owl_to_fhir(
-                out_filename=f'CodeSystem-{d["code_system_id"]}.json',
-                input_path_or_url=d['input_path'] if d['input_path'] else d['download_url'], **kwargs)
-            successes.append(d['id'])
-        except Exception as e:
-            fails.append(d['code_system_id'])
-            print('Failed to convert {}: \n{}'.format(d['code_system_id'], e))
-    print('SUMMARY')
-    print('Successes: ' + str(successes))
-    print('Failures: ' + str(fails))
-
-
 def cli():
     """Command line interface."""
-    package_description = 'Convert OWL to FHIR.'
-    parser = ArgumentParser(description=package_description)
-    parser.add_argument('-i', '--input-path-or-url', required=False, help='URL or path to OWL file to convert.')
+    parser = ArgumentParser(prog='OWL on FHIR', description='Python-based non-minimalistic OWL to FHIR converter.')
+    parser.add_argument('-i', '--input-path-or-url', required=True, help='URL or path to OWL file to convert.')
     parser.add_argument(
-        '-o', '--out-dir', required=False, default=OUTDIR, help='The directory where results should be saved.')
-    parser.add_argument(
-        '-n', '--out-filename', required=False, help='Filename for the primary file converted, e.g. CodeSystem.')
-    parser.add_argument(
-        '-s', '--code-system-id', required=False, default=False,
+        '-s', '--code-system-id', required=True, default=False,
         help="For `fhirjson` only. The code system ID to use for identification on the server uploaded to. "
-             "See: https://hl7.org/fhir/resource-definitions.html#Resource.id",)
+             "See: https://hl7.org/fhir/resource-definitions.html#Resource.id")
     parser.add_argument(
-        '-S', '--code-system-url', required=False, default=False,
+        '-S', '--code-system-url', required=True, default=False,
         help="For `fhirjson` only. Canonical URL for the code system. "
-             "See: https://hl7.org/fhir/codesystem-definitions.html#CodeSystem.url",)
+             "See: https://hl7.org/fhir/codesystem-definitions.html#CodeSystem.url")
     parser.add_argument(
-        '-p', '--include-all-predicates', action='store_true', required=False, default=False,
-        help='Include all predicates in CodeSystem.property and CodeSystem.concept.property, or just is_a/parent?')
-    parser.add_argument(
-        '-u', '--native-uri-stems', required=False, nargs='+',
+        '-u', '--native-uri-stems', required=True, nargs='+',
         help='A comma-separated list of URI stems that will be used to determine whether a concept is native to '
              'the CodeSystem. For example, for OMIM, the following URI stems are native: '
-             'https://omim.org/entry/,https://omim.org/phenotypicSeries/PS"'
+             'https://omim.org/entry/,https://omim.org/phenotypicSeries/PS". '
              'As of 2023-01-15, there is still a bug in the Obographs spec and/or `robot` where certain nodes are not'
              ' being converted. This converter adds back the nodes, but to know which ones belong to the CodeSystem '
              'itself and are not foreign concepts, this parameter is necessary. OAK also makes use of this parameter. '
              'See also: https://github.com/geneontology/obographs/issues/90')
+    parser.add_argument(
+        '-o', '--out-dir', required=False, help='The directory where results should be saved.')
+    parser.add_argument(
+        '-n', '--out-filename', required=False, help='Filename for the primary file converted, e.g. CodeSystem.')
+    parser.add_argument(
+        '-p', '--include-only-critical-predicates', action='store_true', required=False, default=False,
+        help='If present, includes only critical predicates (is_a/parent) rather than all predicates in '
+             'CodeSystem.property and CodeSystem.concept.property.')
     parser.add_argument(
         '-t', '--intermediary-type', choices=INTERMEDIARY_TYPES, default='obographs', required=False,
         help='Which type of intermediary to use? First, we convert OWL to that intermediary format, and then we '
@@ -394,17 +319,8 @@ def cli():
         '-D', '--dev-oak-interpreter-path', default=False, required=False,
         help='If you want to use a local development version of OAK, specify the path to the Python interpreter where '
              'its dependencies are installed (i.e. its virtual environment). Must be used with --dev-oak-path.')
-    parser.add_argument(
-        '-f', '--favorites', action='store_true', default=False, required=False,
-        help='If present, will run all favorite ontologies found in `FAVORITE_ONTOLOGIES`. If using this option, the '
-             'other CLI flags are not relevant. Instead, edit the following config: `FAVORITE_DEFAULTS`.')
 
     d: Dict = vars(parser.parse_args())
-    if d['favorites']:
-        _run_favorites(
-            dev_oak_path=d['dev_oak_path'], dev_oak_interpreter_path=d['dev_oak_interpreter_path'],
-            **{**FAVORITE_DEFAULTS, **{'favorites': FAVORITE_ONTOLOGIES}})
-    del d['favorites']
     owl_to_fhir(**d)
 
 
