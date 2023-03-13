@@ -1,3 +1,6 @@
 bioontologies
 oaklib>=0.1.58
 requests
+# dev dependencies
+# twine
+# virtualenvwrapper
