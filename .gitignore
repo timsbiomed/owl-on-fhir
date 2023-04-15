@@ -1,12 +1,12 @@
 # Boilerplate
 /*.json
+/*.owl
 /env/*
 !/env/.env.example
 /.idea/
 /.run/
 /venv/
-*/cache/*
-!*/cache/.keep
+cache/*
 __pycache__/
 _archive/
 _dev/

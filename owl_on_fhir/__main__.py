@@ -1,6 +1,7 @@
 """Convert OWL to FHIR"""
 import json
 import os
+import shutil
 import subprocess
 from argparse import ArgumentParser
 from typing import Dict, List
@@ -61,7 +62,7 @@ def _preprocess_rxnorm(path: str) -> str:
     return outpath
 
 
-def download(url: str, path: str, download_if_cached=True):
+def download(url: str, path: str, save_to_cache=False, download_if_cached=True):
     """Download file at url to local path
 
     :param download_if_cached: If True and file at `path` already exists, download anyway."""
@@ -72,8 +73,12 @@ def download(url: str, path: str, download_if_cached=True):
         with open(path, 'wb') as f:
             response = requests.get(url, verify=False)
             f.write(response.content)
+    if save_to_cache:
+        cache_path = os.path.join(CACHE_DIR, os.path.basename(path))
+        shutil.copy(path, cache_path)
 
 
+# todo: owl_to_semsql: this may need similar updates to caching that were done for obographs on 2023/04/15
 def owl_to_semsql(inpath: str, use_cache=False) -> str:
     """Converts OWL (or RDF, I think) to a SemanticSQL sqlite DB.
     Docs: https://incatools.github.io/ontology-access-kit/intro/tutorial07.html?highlight=semsql
@@ -101,46 +106,28 @@ def owl_to_semsql(inpath: str, use_cache=False) -> str:
     return outpath
 
 
-def owl_to_obograph(inpath: str, native_uri_stems: List[str] = None, use_cache=False) -> str:
+def owl_to_obograph(inpath: str, out_dir: str, use_cache=False, cache_output=False) -> str:
     """Convert OWL to Obograph
-    # todo: TTL and RDF also supported? not just OWL?"""
+    todo: TTL and RDF also supported? not just OWL?"""
     # Vars
-    outpath = os.path.join(CACHE_DIR, inpath + '.obographs.json')
-    outdir = os.path.realpath(os.path.dirname(outpath))
+    infile = os.path.basename(inpath)
+    cache_path = os.path.join(CACHE_DIR, infile + '.obographs.json')
+    outpath = os.path.join(out_dir, infile + '.obographs.json')
     command = f'java -jar {ROBOT_PATH}.jar convert -i {inpath} -o {outpath} --format json'
 
     # Convert
-    if not os.path.exists(outdir):
-        os.makedirs(outdir)
-    if use_cache and os.path.exists(outpath):
-        return outpath
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
+    if use_cache and os.path.exists(cache_path):
+        return cache_path
     # todo: Switch back to `bioontologies` when complete: https://github.com/biopragmatics/bioontologies/issues/9
     # from bioontologies import robot
     # parse_results: robot.ParseResults = robot.convert_to_obograph_local(inpath)
     # graph = parse_results.graph_document.graphs[0]
     _run_shell_command(command)
 
-    # Patch missing roots / etc issue (until resolved: https://github.com/ontodev/robot/issues/1082)
-    if native_uri_stems:
-        with open(outpath, 'r') as f:
-            data = json.load(f)
-        nodes = data['graphs'][0]['nodes']
-        node_ids = set([node['id'] for node in nodes])
-        edges = data['graphs'][0]['edges']
-        # edges = [x for x in edges if x['pred'] in missing_nodes_from_important_edge_preds]
-        edge_subs = set([edge['sub'] for edge in edges])
-        edge_objs = set([edge['obj'] for edge in edges])
-        edge_ids = edge_subs.union(edge_objs)
-        missing = set([x for x in edge_ids if x not in node_ids])  # all missing
-        missing = [x for x in missing if any([x.startswith(y) for y in native_uri_stems])]  # filter
-
-        if missing:
-            print(f'INFO: The following nodes were found in Obographs edges, but not nodes. Adding missing '
-                  f'declarations: {missing}')
-            for node_id in missing:
-                nodes.append({'id': node_id})
-            with open(outpath, 'w') as f:
-                json.dump(data, f)
+    if cache_output:
+        shutil.copy(outpath, cache_path)
 
     return outpath
 
@@ -151,7 +138,7 @@ def owl_to_obograph(inpath: str, native_uri_stems: List[str] = None, use_cache=F
 #  - https://github.com/geneontology/obographs/issues/89
 def obograph_to_fhir(
     inpath: str, out_dir: str, out_filename: str = None, code_system_id: str = None, code_system_url: str = None,
-    include_all_predicates=False, native_uri_stems: List[str] = None, dev_oak_path: str = None,
+    include_all_predicates=True, native_uri_stems: List[str] = None, dev_oak_path: str = None,
     dev_oak_interpreter_path: str = None
 ) -> str:
     """Convert Obograph to FHIR"""
@@ -176,9 +163,15 @@ def obograph_to_fhir(
     else:
         converter = OboGraphToFHIRConverter()
         converter.curie_converter = curies.Converter.from_prefix_map(get_default_prefix_map())
-        gd: GraphDocument = json_loader.load(inpath, target_class=GraphDocument)
-        converter.dump(gd, out_path, include_all_predicates=include_all_predicates)
-        # todo: update w/ these params when released
+        gd: GraphDocument = json_loader.load(str(inpath), target_class=GraphDocument)
+        converter.dump(
+            gd,
+            out_path,
+            code_system_id=code_system_id,
+            code_system_url=code_system_url,
+            include_all_predicates=include_all_predicates,
+            native_uri_stems=native_uri_stems)
+        # TODO: add these params once supported: use_curies_native_concepts, use_curies_foreign_concepts
         # converter.dump(
         #     gd, out_path, code_system_id='', code_system_url='', include_all_predicates=include_all_predicates,
         #     native_uri_stems=native_uri_stems, use_curies_native_concepts=False, use_curies_foreign_concepts=True)
@@ -219,18 +212,21 @@ def owl_to_fhir(
     input_path = input_path_or_url
     url = None
     maybe_url = urlparse(input_path_or_url)
+    out_dir = out_dir if out_dir else os.getcwd()
+    if out_dir.startswith('~'):
+        out_dir = os.path.expanduser('~/Desktop')
     if maybe_url.scheme and maybe_url.netloc:
         url = input_path_or_url
     if url:
-        input_path = os.path.join(CACHE_DIR, out_filename.replace('.json', '.owl'))
-        download(url, input_path)
+        download_path = os.path.join(out_dir, out_filename.replace('.json', '.owl'))
+        input_path = download_path
+        download(url, download_path, use_cached_intermediaries)
     if not out_filename:
         if not code_system_id:
             code_system_id = '.'.join(os.path.basename(input_path).split('.')[0:-1])  # removes file extension
         out_filename = f'CodeSystem-{code_system_id}.json'
     if not code_system_id and out_filename and out_filename.startswith('CodeSystem-'):
         code_system_id = out_filename.split('-')[1].split('.')[0]
-    input_path = input_path if os.path.exists(input_path) else os.path.join(os.getcwd(), input_path)
     out_dir = os.path.realpath(out_dir if out_dir else os.path.dirname(input_path))
     intermediary_outdir = intermediary_outdir if intermediary_outdir else out_dir
 
@@ -240,13 +236,14 @@ def owl_to_fhir(
 
     # Convert
     if intermediary_type == 'obographs' or input_path.endswith('.ttl'):  # semsql only supports .owl
-        intermediary_path = owl_to_obograph(input_path, native_uri_stems, use_cached_intermediaries)
+        intermediary_path = owl_to_obograph(input_path, out_dir, use_cached_intermediaries, use_cached_intermediaries)
         obograph_to_fhir(
             inpath=intermediary_path, out_dir=intermediary_outdir, out_filename=out_filename,
             code_system_id=code_system_id, code_system_url=code_system_url, native_uri_stems=native_uri_stems,
             include_all_predicates=include_all_predicates, dev_oak_path=dev_oak_path,
             dev_oak_interpreter_path=dev_oak_interpreter_path)
     else:  # semsql
+        # todo: owl_to_semsql: this may need similar updates to caching that were done for obographs on 2023/04/15
         intermediary_path = owl_to_semsql(input_path, use_cached_intermediaries)
         semsql_to_fhir(
             inpath=intermediary_path, out_dir=intermediary_outdir, out_filename=out_filename,
@@ -304,7 +301,7 @@ def cli():
              'convert that to FHIR.')
     parser.add_argument(
         '-c', '--use-cached-intermediaries', action='store_true', required=False, default=False,
-        help='Use cached intermediaries if they exist?')
+        help='Use cached intermediaries if they exist? Also will save intermediaries to owl-on-fhir\'s cache/ dir.')
     parser.add_argument(
         '-r', '--retain-intermediaries', action='store_true', default=False, required=False,
         help='Retain intermediary files created during conversion process (e.g. Obograph JSON)?')
