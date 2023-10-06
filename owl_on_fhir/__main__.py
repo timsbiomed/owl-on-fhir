@@ -4,7 +4,8 @@ import os
 import shutil
 import subprocess
 from argparse import ArgumentParser
-from typing import Dict, List
+from pathlib import PosixPath
+from typing import Dict, List, Union
 
 import curies
 import requests
@@ -21,7 +22,7 @@ SRC_DIR = os.path.dirname(os.path.realpath(__file__))
 BIN_DIR = SRC_DIR
 PROJECT_DIR = os.path.join(SRC_DIR, '..')
 CACHE_DIR = os.path.join(PROJECT_DIR, 'cache')
-ROBOT_PATH = os.path.join(BIN_DIR, 'robot')
+ROBOT_PATH = os.path.join(BIN_DIR, 'robot.jar')
 INTERMEDIARY_TYPES = ['obographs', 'semsql']
 
 
@@ -113,7 +114,7 @@ def owl_to_obograph(inpath: str, out_dir: str, use_cache=False, cache_output=Fal
     infile = os.path.basename(inpath)
     cache_path = os.path.join(CACHE_DIR, infile + '.obographs.json')
     outpath = os.path.join(out_dir, infile + '.obographs.json')
-    command = f'java -jar {ROBOT_PATH}.jar convert -i {inpath} -o {outpath} --format json'
+    command = f'java -jar {ROBOT_PATH} convert -i {inpath} -o {outpath} --format json'
 
     # Convert
     if not os.path.exists(out_dir):
@@ -194,7 +195,7 @@ def semsql_to_fhir(inpath: str, out_dir: str, out_filename: str = None, include_
 
 
 def owl_to_fhir(
-    input_path_or_url: str, out_dir: str = None, out_filename: str = None, include_only_critical_predicates=False,
+    input_path_or_url: Union[str, PosixPath], out_dir: str = None, out_filename: str = None, include_only_critical_predicates=False,
     retain_intermediaries=False, intermediary_type=['obographs', 'semsql'][0], use_cached_intermediaries=False,
     intermediary_outdir: str = None, convert_intermediaries_only=False, native_uri_stems: List[str] = None,
     code_system_id: str = None, code_system_url: str = None, dev_oak_path: str = None,
@@ -209,6 +210,7 @@ def owl_to_fhir(
     # Download if necessary & determine outpaths
     # todo: this section w/ urls, names, and IDs has too many possible branches and is error prone. simplify by
     #  updating CLI params to require url or path separately, and maybe require codesystem id
+    input_path_or_url = str(input_path_or_url)
     input_path = input_path_or_url
     url = None
     maybe_url = urlparse(input_path_or_url)
@@ -266,17 +268,19 @@ def owl_to_fhir(
     return os.path.join(out_dir, out_filename)
 
 
+# TODO: some of these args said"for fhirjson only". Was this because I was going to add an option for NPM output when
+#  OAK supports? Either way, removed for now till I figure out if I really was parameterizing something here.
 def cli():
     """Command line interface."""
     parser = ArgumentParser(prog='OWL on FHIR', description='Python-based non-minimalistic OWL to FHIR converter.')
     parser.add_argument('-i', '--input-path-or-url', required=True, help='URL or path to OWL file to convert.')
     parser.add_argument(
         '-s', '--code-system-id', required=True, default=False,
-        help="For `fhirjson` only. The code system ID to use for identification on the server uploaded to. "
+        help="The code system ID to use for identification on the server uploaded to. "
              "See: https://hl7.org/fhir/resource-definitions.html#Resource.id")
     parser.add_argument(
         '-S', '--code-system-url', required=True, default=False,
-        help="For `fhirjson` only. Canonical URL for the code system. "
+        help="Canonical URL for the code system. "
              "See: https://hl7.org/fhir/codesystem-definitions.html#CodeSystem.url")
     parser.add_argument(
         '-u', '--native-uri-stems', required=True, nargs='+',
@@ -288,7 +292,8 @@ def cli():
              'itself and are not foreign concepts, this parameter is necessary. OAK also makes use of this parameter. '
              'See also: https://github.com/geneontology/obographs/issues/90')
     parser.add_argument(
-        '-o', '--out-dir', required=False, help='The directory where results should be saved.')
+        '-o', '--out-dir', required=False, default=os.getcwd(),
+        help='Output directory. Defaults to current working directory.')
     parser.add_argument(
         '-n', '--out-filename', required=False, help='Filename for the primary file converted, e.g. CodeSystem.')
     parser.add_argument(

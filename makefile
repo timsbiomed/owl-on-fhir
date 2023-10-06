@@ -8,7 +8,7 @@ clean:
 	rm -rf ./*.egg-info
 
 build: clean
-	python3 setup.py sdist bdist_wheel
+	python setup.py sdist bdist_wheel
 
 pypi: build
 	twine upload --repository-url https://upload.pypi.org/legacy/ dist/*;
