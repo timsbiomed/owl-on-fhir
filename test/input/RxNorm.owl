@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/RxNorm/ontology#"
+     xml:base="http://purl.obolibrary.org/obo/RxNorm/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:OMOP="https://athena.ohdsi.org/search-terms/terms/"
+     xmlns:omoprel="https://w3id.org/cpont/omop/relations/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/RxNorm/ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_class_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_class_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_code -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_code"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/domain_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/domain_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/invalid_reason -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/invalid_reason"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/standard_concept -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/standard_concept"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_end_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_end_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_start_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_start_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/vocabulary_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/vocabulary_id"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Available_as_box -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Available_as_box"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Consists_of -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Consists_of"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_marketed_form -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_marketed_form"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_quantified_form -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_quantified_form"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_tradename -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_tradename"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Mapped_from -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Mapped_from"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Maps_to -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Maps_to"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/RxNorm_has_dose_form -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/RxNorm_has_dose_form"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/RxNorm_is_a -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/RxNorm_is_a"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501343 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501343">
+        <rdfs:label>hepatitis B immune globulin</rdfs:label>
+        <OMOP:concept_class_id>Ingredient</OMOP:concept_class_id>
+        <OMOP:concept_code>26744</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501345 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501345">
+        <rdfs:label>hepatitis B immune globulin 217 UNT/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>353465</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501346 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501346">
+        <rdfs:label>hepatitis B immune globulin 200 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>412674</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+        <omoprel:Available_as_box>OMOP:41148125</omoprel:Available_as_box>
+        <omoprel:Consists_of>OMOP:19110172</omoprel:Consists_of>
+        <omoprel:Has_marketed_form>OMOP:2026202</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2026526</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2027125</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2027126</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2027128</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35136770</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35145313</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35155631</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35160215</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:41358644</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:43680747</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:43735658</omoprel:Has_marketed_form>
+        <omoprel:Has_quantified_form>OMOP:42919946</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:42920145</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:42920718</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:43752448</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:43843670</omoprel:Has_quantified_form>
+        <omoprel:Has_tradename>OMOP:2035461</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:35139038</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:35157878</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:42956837</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:42956838</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:42956839</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:43661184</omoprel:Has_tradename>
+        <omoprel:Mapped_from>OMOP:501346</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:501346</omoprel:Maps_to>
+        <omoprel:RxNorm_has_dose_form>OMOP:19082103</omoprel:RxNorm_has_dose_form>
+        <omoprel:RxNorm_is_a>OMOP:36223599</omoprel:RxNorm_is_a>
+        <omoprel:RxNorm_is_a>OMOP:40045671</omoprel:RxNorm_is_a>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501347 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501347">
+        <rdfs:label>hepatitis B immune globulin 50 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>412675</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501415 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501415">
+        <rdfs:label>0.5 ML hepatitis B immune globulin 217 UNT/ML Prefilled Syringe [Bayhep B]</rdfs:label>
+        <OMOP:concept_class_id>Quant Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825138</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501416 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501416">
+        <rdfs:label>1 ML hepatitis B immune globulin 217 UNT/ML Prefilled Syringe</rdfs:label>
+        <OMOP:concept_class_id>Quant Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825139</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501418 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501418">
+        <rdfs:label>HEPATITIS B IMMUNE GLOBULIN 208 UNT/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>825145</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2010-07-04</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501419 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501419">
+        <rdfs:label>HEPATITIS B IMMUNE GLOBULIN 208 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825146</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501420 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501420">
+        <rdfs:label>HEPATITIS B IMMUNE GLOBULIN 208 UNT/ML Injectable Solution [Nabi-HB]</rdfs:label>
+        <OMOP:concept_class_id>Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825149</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501421 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501421">
+        <rdfs:label>hepatitis B immune globulin 220 UNT/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>825152</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501482 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501482">
+        <rdfs:label>hepatitis B immune globulin 220 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825153</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501483 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501483">
+        <rdfs:label>hepatitis B immune globulin 220 UNT/ML Injectable Solution [Hyperhep B]</rdfs:label>
+        <OMOP:concept_class_id>Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825156</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501484 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501484">
+        <rdfs:label>0.5 ML hepatitis B immune globulin 220 UNT/ML Prefilled Syringe</rdfs:label>
+        <OMOP:concept_class_id>Quant Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825157</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501485 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501485">
+        <rdfs:label>0.5 ML hepatitis B immune globulin 220 UNT/ML Prefilled Syringe [Hyperhep B]</rdfs:label>
+        <OMOP:concept_class_id>Quant Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825159</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501487 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501487">
+        <rdfs:label>1 ML hepatitis B immune globulin 220 UNT/ML Prefilled Syringe [Hyperhep B]</rdfs:label>
+        <OMOP:concept_class_id>Quant Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825161</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501488 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501488">
+        <rdfs:label>Hepatitis B Vaccine</rdfs:label>
+        <OMOP:concept_class_id>Ingredient</OMOP:concept_class_id>
+        <OMOP:concept_code>26746</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501523 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501523">
+        <rdfs:label>Hepatitis B Vaccine 0.01 MG/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>328556</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501524 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501524">
+        <rdfs:label>Hepatitis B Vaccine 0.02 MG/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>328559</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501528 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501528">
+        <rdfs:label>0.5 ML HEPATITIS B VACCINE (RECOMBINANT) 0.02 MG/ML Prefilled Syringe</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>763313</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2011-12-04</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-03-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/505117 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/505117">
+        <rdfs:label>intramuscular immunoglobulin</rdfs:label>
+        <OMOP:concept_class_id>Precise Ingredient</OMOP:concept_class_id>
+        <OMOP:concept_code>108067</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+

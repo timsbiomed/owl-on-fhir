@@ -1,10 +1,10 @@
 """Convert OWL to FHIR"""
-import json
 import os
 import shutil
 import subprocess
+import sys
 from argparse import ArgumentParser
-from pathlib import PosixPath
+from pathlib import Path
 from typing import Dict, List, Union
 
 import curies
@@ -15,6 +15,8 @@ from oaklib.datamodels.obograph import GraphDocument
 from oaklib.interfaces.basic_ontology_interface import get_default_prefix_map
 from urllib.parse import urlparse
 
+from sssom.parsers import parse_sssom_table
+from sssom.writers import write_fhir_json
 
 # Vars
 # - Vars: Static
@@ -23,7 +25,6 @@ BIN_DIR = SRC_DIR
 PROJECT_DIR = os.path.join(SRC_DIR, '..')
 CACHE_DIR = os.path.join(PROJECT_DIR, 'cache')
 ROBOT_PATH = os.path.join(BIN_DIR, 'robot.jar')
-INTERMEDIARY_TYPES = ['obographs', 'semsql']
 
 
 # Functions
@@ -79,34 +80,6 @@ def download(url: str, path: str, save_to_cache=False, download_if_cached=True):
         shutil.copy(path, cache_path)
 
 
-# todo: owl_to_semsql: this may need similar updates to caching that were done for obographs on 2023/04/15
-def owl_to_semsql(inpath: str, use_cache=False) -> str:
-    """Converts OWL (or RDF, I think) to a SemanticSQL sqlite DB.
-    Docs: https://incatools.github.io/ontology-access-kit/intro/tutorial07.html?highlight=semsql
-    - Had to change "--rm -ti"  --> "--rm"
-    todo: consider using linkml/semantic-sql image which is more up-to-date instead
-      https://github.com/INCATools/semantic-sql
-      docker run  -v $PWD:/work -w /work -ti linkml/semantic-sql semsql make foo.db
-    todo: RDF also supported? not just OWL? (TTL not supported)
-    """
-    # Vars
-    _dir = os.path.dirname(inpath)
-    output_filename = os.path.basename(inpath).replace('.owl', '.db').replace('.rdf', '.db').replace('.ttl', '.db')
-    outpath = os.path.join(_dir, output_filename)
-    command_str = f'docker run -w /work -v {_dir}:/work --rm obolibrary/odkfull:dev semsql make {output_filename}'
-
-    # Convert
-    if use_cache and os.path.exists(outpath):
-        return outpath
-    try:
-        _run_shell_command(command_str, cwd_outdir=_dir)
-    except FileExistsError:
-        if not use_cache:
-            os.remove(outpath)
-            _run_shell_command(command_str, cwd_outdir=_dir)
-    return outpath
-
-
 def owl_to_obograph(inpath: str, out_dir: str, use_cache=False, cache_output=False) -> str:
     """Convert OWL to Obograph
     todo: TTL and RDF also supported? not just OWL?"""
@@ -133,10 +106,6 @@ def owl_to_obograph(inpath: str, out_dir: str, use_cache=False, cache_output=Fal
     return outpath
 
 
-# todo: This doesn't work until following Obographs issues solved. Moved to semsql intermediary for now.
-#  - https://github.com/linkml/linkml/issues/1156
-#  - https://github.com/ontodev/robot/issues/1079
-#  - https://github.com/geneontology/obographs/issues/89
 def obograph_to_fhir(
     inpath: str, out_dir: str, out_filename: str = None, code_system_id: str = None, code_system_url: str = None,
     include_all_predicates=True, native_uri_stems: List[str] = None, dev_oak_path: str = None,
@@ -179,27 +148,47 @@ def obograph_to_fhir(
     return out_path
 
 
-# todo: add local dev oak params to this and abstract a general 'run oak' func for this and obographs_to_fhir
-def semsql_to_fhir(inpath: str, out_dir: str, out_filename: str = None, include_all_predicates=False) -> str:
-    """Convert SemanticSQL sqlite DB to FHIR"""
-    # todo: any way to do this using Python API?
-    # todo: do I need some way of supplying prefix_map? check: are outputs all URIs?
-    # converter.curie_converter = curies.Converter.from_prefix_map(get_default_prefix_map())
-    out_path = os.path.join(out_dir, out_filename)
-    if not os.path.exists(out_dir):
-        os.makedirs(out_dir)
-    preds_flag = ' --include-all-predicates' if include_all_predicates else ''
-    command_str = f'runoak -i sqlite:{inpath} dump -o {out_path} -O fhirjson{preds_flag}'
-    _run_shell_command(command_str)
-    return out_path  # todo: When OAK changes to save multiple files, return out_dir
+def write_concept_maps(obograph_path: str, outdir: str = None, code_system_id: str = None, verbose=True):
+    """"From an Obograph JSON, convert to SSSOM, then convert to 1+ ConceptMap JSON"""
+    # Vars
+    outdir = outdir or obograph_path
+    outdir = outdir if os.path.isdir(outdir) else os.path.dirname(outdir)
+    # todo: ascertaining code_system_id: could be more combinations like - or _ obographs
+    code_system_id = code_system_id or os.path.basename(obograph_path)\
+        .replace(".obographs", "").replace(".obograph", "").replace(".json", "")
+    outpath_sssom = os.path.join(outdir, f"{code_system_id}.sssom.tsv")
+
+    # TODO: create metadata.sssom.yml
+    # TODO: First, try creating one manually
+    metadata_path = os.path.join(outdir, 'temp-metadata.sssom.yml')
+
+    # todo: is there a way to do this via Python API? would be better
+    # todo: -m metadata.sssom.yml: can I create this file on the fly and pass?
+    command_str = f'sssom parse {obograph_path} -I obographs-json -o {outpath_sssom} -m {metadata_path}'
+    print('Converting: Obographs -> SSSSOM')
+    result = subprocess.run(command_str.split(), capture_output=True, text=True)
+    stderr, stdout = result.stderr, result.stdout
+    if 'error' in stderr.lower():
+        raise RuntimeError(stderr)
+    if verbose:
+        print(stdout)
+        print(stderr, file=sys.stderr)
+
+    # TODO: Fix bug: Bug?: Obographs parser: metadata not utilized; getting 0 mappings #456 https://github.com/mapping-commons/sssom-py/issues/456
+    # todo: outpath_concept_map: temporary. in next sssom update, will be outdir cuz 2+ maps
+    print('Converting: SSSOM -> ConceptMaps')
+    outpath_concept_map = os.path.join(outdir, f'ConceptMap-{code_system_id}.json')
+    df = parse_sssom_table(outpath_sssom)
+    with open(outpath_concept_map, "w") as file:
+        write_fhir_json(df, file)
 
 
 def owl_to_fhir(
-    input_path_or_url: Union[str, PosixPath], out_dir: str = None, out_filename: str = None, include_only_critical_predicates=False,
-    retain_intermediaries=False, intermediary_type=['obographs', 'semsql'][0], use_cached_intermediaries=False,
+    input_path_or_url: Union[str, Path], out_dir: Union[str, Path] = None, out_filename: str = None,
+    include_only_critical_predicates=False, retain_intermediaries=False, use_cached_intermediaries=False,
     intermediary_outdir: str = None, convert_intermediaries_only=False, native_uri_stems: List[str] = None,
     code_system_id: str = None, code_system_url: str = None, dev_oak_path: str = None,
-    dev_oak_interpreter_path: str = None, rxnorm_bioportal=False
+    dev_oak_interpreter_path: str = None, rxnorm_bioportal=False, include_codesystem=True, include_conceptmap=True
 ) -> str:
     """Run conversion
 
@@ -216,7 +205,7 @@ def owl_to_fhir(
     input_path = input_path_or_url
     url = None
     maybe_url = urlparse(input_path_or_url)
-    out_dir = out_dir if out_dir else os.getcwd()
+    out_dir = str(out_dir) if out_dir else os.getcwd()
     if out_dir.startswith('~'):
         out_dir = os.path.expanduser('~/Desktop')
     if maybe_url.scheme and maybe_url.netloc:
@@ -238,35 +227,26 @@ def owl_to_fhir(
     if rxnorm_bioportal:
         input_path = _preprocess_rxnorm(input_path)
 
-    # Convert
-    if intermediary_type == 'obographs' or input_path.endswith('.ttl'):  # semsql only supports .owl
-        intermediary_path = owl_to_obograph(input_path, out_dir, use_cached_intermediaries, use_cached_intermediaries)
+    # Convert intermediary: Obograph
+    intermediary_path = owl_to_obograph(input_path, out_dir, use_cached_intermediaries, use_cached_intermediaries)
+    if convert_intermediaries_only:
+        return intermediary_path
+
+    # Convert: CodeSystem
+    if include_codesystem:
         obograph_to_fhir(
             inpath=intermediary_path, out_dir=intermediary_outdir, out_filename=out_filename,
             code_system_id=code_system_id, code_system_url=code_system_url, native_uri_stems=native_uri_stems,
             include_all_predicates=include_all_predicates, dev_oak_path=dev_oak_path,
             dev_oak_interpreter_path=dev_oak_interpreter_path)
-    else:  # semsql
-        # todo: owl_to_semsql: this may need similar updates to caching that were done for obographs on 2023/04/15
-        intermediary_path = owl_to_semsql(input_path, use_cached_intermediaries)
-        semsql_to_fhir(
-            inpath=intermediary_path, out_dir=intermediary_outdir, out_filename=out_filename,
-            include_all_predicates=include_all_predicates)
-    if convert_intermediaries_only:
-        return intermediary_path
+
+    # Convert: ConceptMap
+    if include_conceptmap:
+        write_concept_maps(intermediary_path, out_dir, code_system_id)
 
     # Cleanup
-    indir = os.path.dirname(input_path)
-    template_db_path = os.path.join(indir, '.template.db')
-    if os.path.exists(template_db_path):
-        os.remove(template_db_path)
     if not retain_intermediaries:
-        # noinspection PyUnboundLocalVariable
         os.remove(intermediary_path)
-        if intermediary_type == 'semsql':
-            # More semsql intermediaries
-            intermediary_filename = os.path.basename(intermediary_path)
-            os.remove(os.path.join(indir, intermediary_filename.replace('.db', '-relation-graph.tsv.gz')))
     return os.path.join(out_dir, out_filename)
 
 
@@ -302,10 +282,6 @@ def cli():
         '-p', '--include-only-critical-predicates', action='store_true', required=False, default=False,
         help='If present, includes only critical predicates (is_a/parent) rather than all predicates in '
              'CodeSystem.property and CodeSystem.concept.property.')
-    parser.add_argument(
-        '-t', '--intermediary-type', choices=INTERMEDIARY_TYPES, default='obographs', required=False,
-        help='Which type of intermediary to use? First, we convert OWL to that intermediary format, and then we '
-             'convert that to FHIR.')
     parser.add_argument(
         '-c', '--use-cached-intermediaries', action='store_true', required=False, default=False,
         help='Use cached intermediaries if they exist? Also will save intermediaries to owl-on-fhir\'s cache/ dir.')

@@ -1,0 +1,3335 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/CPT4/ontology#"
+     xml:base="http://purl.obolibrary.org/obo/CPT4/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:OMOP="https://athena.ohdsi.org/search-terms/terms/"
+     xmlns:omoprel="https://w3id.org/cpont/omop/relations/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/CPT4/ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_class_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_class_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_code -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_code"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/domain_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/domain_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/standard_concept -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/standard_concept"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_end_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_end_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_start_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_start_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/vocabulary_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/vocabulary_id"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Maps_to -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Maps_to"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Subsumes -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Subsumes"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/45887928 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/45887928"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/45888071 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/45888071"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/45888117 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/45888117"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/45888431 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/45888431"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/45890018 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/45890018"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/700360 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/700360">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/45890018"/>
+        <rdfs:label>Infectious agent detection by nucleic acid (DNA or RNA); severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) (coronavirus disease [COVID-19]), amplified probe technique</rdfs:label>
+        <OMOP:concept_class_id>CPT4</OMOP:concept_class_id>
+        <OMOP:concept_code>87635</OMOP:concept_code>
+        <OMOP:domain_id>Measurement</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-03-13</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:756084</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/705253 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/705253">
+        <rdfs:label>Immunization administration by intramuscular injection of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) (coronavirus disease [COVID-19]) vaccine, mRNA-LNP, bivalent spike protein, preservative free, 3 mcg/0.2 mL dosage, diluent reconstitute</rdfs:label>
+        <OMOP:concept_class_id>CPT4</OMOP:concept_class_id>
+        <OMOP:concept_code>0174A</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2023-03-14</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709741 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709741">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/45888431"/>
+        <rdfs:label>Excision of chest wall tumor involving rib(s), with plastic reconstruction</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035646</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+        <omoprel:Subsumes>OMOP:709957</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:709958</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709742 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709742">
+        <rdfs:label>Myocardial imaging, positron emission tomography (PET), metabolic evaluation study (including ventricular wall motion[s] and/or ejection fraction[s], when performed), single study</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035664</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709743 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709743">
+        <rdfs:label>Computerized dynamic posturography sensory organization test (CDP-SOT), 6 conditions (ie, eyes open, eyes closed, visual sway, platform sway, eyes closed platform sway, platform and visual sway), including interpretation and report</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035672</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709744 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709744">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/45888071"/>
+        <rdfs:label>Spinal puncture, lumbar, diagnostic</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035653</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+        <omoprel:Subsumes>OMOP:2110609</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:709975</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709745 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709745">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/45888071"/>
+        <rdfs:label>Spinal puncture, therapeutic, for drainage of cerebrospinal fluid (by needle or catheter)</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035654</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+        <omoprel:Subsumes>OMOP:2110610</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:709976</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709746 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709746">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/45888117"/>
+        <rdfs:label>Radiation treatment delivery, &gt;/=1 MeV</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035663</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+        <omoprel:Subsumes>OMOP:2211859</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:2211863</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:2211867</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709747 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709747">
+        <rdfs:label>Magnetic resonance imaging, breast, without and with contrast material(s), including computer-aided detection (CAD real-time lesion detection, characterization and pharmacokinetic analysis), when performed.</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035662</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709748 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709748">
+        <rdfs:label>Prescribed amounts of stationary oxygen for daytime use while at rest and nighttime use differ and the average of the two amounts is less than 1 liter per minute (lpm)</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Modifier</OMOP:concept_class_id>
+        <OMOP:concept_code>QA</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709749 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709749">
+        <rdfs:label>Outpatient occupational therapy services furnished in whole or in part by an occupational therapy assistant</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Modifier</OMOP:concept_class_id>
+        <OMOP:concept_code>CO</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709750 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709750">
+        <rdfs:label>Outpatient physical therapy services furnished in whole or in part by a physical therapist assistant</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Modifier</OMOP:concept_class_id>
+        <OMOP:concept_code>CQ</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709751 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709751">
+        <rdfs:label>Items and services furnished by a provider-based, off-campus emergency department</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Modifier</OMOP:concept_class_id>
+        <OMOP:concept_code>ER</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709752 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709752">
+        <rdfs:label>Telehealth services for diagnosis, evaluation, or treatment, of symptoms of an acute stroke</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Modifier</OMOP:concept_class_id>
+        <OMOP:concept_code>G0</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709753 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709753">
+        <rdfs:label>Prescribed amounts of stationary oxygen for daytime use while at rest and nighttime use differ and the average of the two amounts exceeds 4 liters per minute (lpm) and portable oxygen is prescribed</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Modifier</OMOP:concept_class_id>
+        <OMOP:concept_code>QB</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709754 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709754">
+        <rdfs:label>Prescribed amounts of stationary oxygen for daytime use while at rest and nighttime use differ and the average of the two amounts is greater than 4 liters per minute (lpm)</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Modifier</OMOP:concept_class_id>
+        <OMOP:concept_code>QR</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709755 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709755">
+        <rdfs:label>Transperineal periurethral balloon continence device</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035389</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709756 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709756">
+        <rdfs:label>Use of Anti-Piracy Technology in CPT Professional 2023 Codebook</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035952</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709757 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709757">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/45887928"/>
+        <rdfs:label>Grafting of autologous fat harvested by liposuction technique to trunk, breasts, scalp, arms, and/or legs</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035643</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+        <omoprel:Subsumes>OMOP:709941</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:709942</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/709758 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/709758">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/45887928"/>
+        <rdfs:label>Grafting of autologous fat harvested by liposuction technique to face, eyelids, mouth, neck, ears, orbits, genitalia, hands, and/or feet</rdfs:label>
+        <OMOP:concept_class_id>CPT4 Hierarchy</OMOP:concept_class_id>
+        <OMOP:concept_code>1035644</OMOP:concept_code>
+        <OMOP:domain_id>Procedure</OMOP:domain_id>
+        <OMOP:standard_concept>C</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2020-05-04</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>CPT4</OMOP:vocabulary_id>
+        <omoprel:Subsumes>OMOP:709943</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:709944</omoprel:Subsumes>
+    </owl:Class>
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_class_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_class_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_code -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_code"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/domain_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/domain_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_end_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_end_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_start_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_start_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/vocabulary_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/vocabulary_id"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Maps_to -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Maps_to"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Subsumes -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Subsumes"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1569462 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1569462"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1570122 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1570123 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1570124 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1570124"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1570125 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1570125"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1570126 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1570126"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1570127 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1570127"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/1570128 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/1570128"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/8689 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/8689">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1569462"/>
+        <rdfs:label>Influenza due to unidentified influenza virus with other respiratory manifestations</rdfs:label>
+        <OMOP:concept_class_id>4-char billing code</OMOP:concept_class_id>
+        <OMOP:concept_code>J11.1</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2011-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:46273463</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/8690 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/8690">
+        <rdfs:label>Unspecified enthesopathy, lower limb, excluding foot</rdfs:label>
+        <OMOP:concept_class_id>4-char billing code</OMOP:concept_class_id>
+        <OMOP:concept_code>M76.9</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2011-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/8691 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/8691">
+        <rdfs:label>Maternal care for disproportion due to other fetal deformities</rdfs:label>
+        <OMOP:concept_class_id>4-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>O33.7</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2011-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/8692 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/8692">
+        <rdfs:label>Unspecified perpetrator of maltreatment and neglect</rdfs:label>
+        <OMOP:concept_class_id>4-char billing code</OMOP:concept_class_id>
+        <OMOP:concept_code>Y07.9</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2011-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/8693 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/8693">
+        <rdfs:label>Assault by unspecified means</rdfs:label>
+        <OMOP:concept_class_id>3-char billing code</OMOP:concept_class_id>
+        <OMOP:concept_code>Y09</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2011-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/8694 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/8694">
+        <rdfs:label>Other medical devices associated with adverse incidents</rdfs:label>
+        <OMOP:concept_class_id>4-char billing code</OMOP:concept_class_id>
+        <OMOP:concept_code>Y82.8</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2011-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9694 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9694">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:label>Idiopathic chronic gout, unspecified site</rdfs:label>
+        <OMOP:concept_class_id>5-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.00</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45562652</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45586895</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9695 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9695">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570124"/>
+        <rdfs:label>Idiopathic chronic gout, right shoulder</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.011</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4116007</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45567475</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45582065</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9696 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9696">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570124"/>
+        <rdfs:label>Idiopathic chronic gout, left shoulder</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.012</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4116007</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45538690</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45591748</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9697 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9697">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570124"/>
+        <rdfs:label>Idiopathic chronic gout, unspecified shoulder</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.019</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4116007</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45557810</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45562653</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9698 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9698">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570125"/>
+        <rdfs:label>Idiopathic chronic gout, right elbow</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.021</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45543489</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45591749</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9699 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9699">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570125"/>
+        <rdfs:label>Idiopathic chronic gout, left elbow</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.022</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45567476</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45601357</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9700 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9700">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570125"/>
+        <rdfs:label>Idiopathic chronic gout, unspecified elbow</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.029</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45577169</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45606134</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9701 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9701">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570126"/>
+        <rdfs:label>Idiopathic chronic gout, right wrist</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.031</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45548328</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45577170</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9702 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9702">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570126"/>
+        <rdfs:label>Idiopathic chronic gout, left wrist</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.032</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45548329</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45596499</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9703 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9703">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570126"/>
+        <rdfs:label>Idiopathic chronic gout, unspecified wrist</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.039</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45538691</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45553100</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9704 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9704">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570127"/>
+        <rdfs:label>Idiopathic chronic gout, right hand</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.041</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45591750</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45606135</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9705 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9705">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570127"/>
+        <rdfs:label>Idiopathic chronic gout, left hand</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.042</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45553101</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45601358</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9706 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9706">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570127"/>
+        <rdfs:label>Idiopathic chronic gout, unspecified hand</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.049</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45562654</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45586896</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9707 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9707">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570122"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570123"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/1570128"/>
+        <rdfs:label>Idiopathic chronic gout, right hip</rdfs:label>
+        <OMOP:concept_class_id>6-char nonbill code</OMOP:concept_class_id>
+        <OMOP:concept_code>M1A.051</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2014-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>ICD10CM</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:4084229</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:45543490</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45601359</omoprel:Subsumes>
+    </owl:Class>
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_class_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_class_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_code -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_code"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/domain_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/domain_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/invalid_reason -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/invalid_reason"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_end_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_end_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_start_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_start_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/vocabulary_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/vocabulary_id"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Maps_to -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Maps_to"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583515 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583515">
+        <rdfs:label>Twice-Daily diclofenac epolamine 0.013 MG/MG Medicated Patch</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>93322550</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583516 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583516">
+        <rdfs:label>prednisone 10 MG Oral Tablet</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>378064101</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:1551101</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583517 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583517">
+        <rdfs:label>prednisone 10 MG Oral Tablet</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>378064110</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:1551101</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583518 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583518">
+        <rdfs:label>prednisone 20 MG Oral Tablet</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>378064201</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:1551170</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583519 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583519">
+        <rdfs:label>prednisone 20 MG Oral Tablet</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>378064205</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:1551170</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583520 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583520">
+        <rdfs:label>prednisone 20 MG Oral Tablet</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>378064210</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:1551170</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583521 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583521">
+        <rdfs:label>erythromycin 0.02 MG/MG Topical Gel [Erygel]</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>378807593</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583522 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583522">
+        <rdfs:label>deferoxamine mesylate 500 MG Injection</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>409233601</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583523 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583523">
+        <rdfs:label>deferoxamine mesylate 2000 MG Injection</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>409233715</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583524 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583524">
+        <rdfs:label>ceftazidime 1000 MG Injection [Tazicef]</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>409508211</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:46275525</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583525 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583525">
+        <rdfs:label>ceftazidime 2000 MG Injection [Tazicef]</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>409508413</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:46275527</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583526 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583526">
+        <rdfs:label>ceftazidime 200 MG/ML Injectable Solution [Tazicef]</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>409508613</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:19032383</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583527 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583527">
+        <rdfs:label>2 ML prochlorperazine 5 MG/ML Injection</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>14789070007</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583528 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583528">
+        <rdfs:label>camphor 0.048 MG/MG / Eucalyptus oil 0.012 MG/MG / menthol 0.026 MG/MG Topical Ointment</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>37000054415</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-10-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583529 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583529">
+        <rdfs:label>1 ML glycopyrrolate 0.2 MG/ML Injection</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>43547054301</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:35605661</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583530 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583530">
+        <rdfs:label>2 ML glycopyrrolate 0.2 MG/ML Injection</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>43547054401</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:35605815</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583531 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583531">
+        <rdfs:label>ertapenem 1000 MG Injection</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>44647005101</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:35606488</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583532 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583532">
+        <rdfs:label>Calcium Carbonate 750 MG Chewable Tablet</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>47682028522</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2020-04-01</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583533 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583533">
+        <rdfs:label>ergocalciferol 0.2 MG/ML Oral Solution</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>47781064726</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+        <omoprel:Maps_to>OMOP:19045071</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/583534 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/583534">
+        <rdfs:label>adapalene 1 MG/ML Medicated Pad</rdfs:label>
+        <OMOP:concept_class_id>11-digit NDC</OMOP:concept_class_id>
+        <OMOP:concept_code>49908011800</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2019-04-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>NDC</OMOP:vocabulary_id>
+    </owl:Class>
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_class_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_class_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_code -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_code"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/domain_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/domain_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/invalid_reason -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/invalid_reason"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/standard_concept -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/standard_concept"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_end_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_end_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_start_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_start_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/vocabulary_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/vocabulary_id"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Available_as_box -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Available_as_box"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Consists_of -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Consists_of"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_marketed_form -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_marketed_form"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_quantified_form -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_quantified_form"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_tradename -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_tradename"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Mapped_from -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Mapped_from"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Maps_to -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Maps_to"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/RxNorm_has_dose_form -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/RxNorm_has_dose_form"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/RxNorm_is_a -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/RxNorm_is_a"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501343 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501343">
+        <rdfs:label>hepatitis B immune globulin</rdfs:label>
+        <OMOP:concept_class_id>Ingredient</OMOP:concept_class_id>
+        <OMOP:concept_code>26744</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501345 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501345">
+        <rdfs:label>hepatitis B immune globulin 217 UNT/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>353465</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501346 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501346">
+        <rdfs:label>hepatitis B immune globulin 200 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>412674</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+        <omoprel:Available_as_box>OMOP:41148125</omoprel:Available_as_box>
+        <omoprel:Consists_of>OMOP:19110172</omoprel:Consists_of>
+        <omoprel:Has_marketed_form>OMOP:2026202</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2026526</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2027125</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2027126</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:2027128</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35136770</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35145313</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35155631</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:35160215</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:41358644</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:43680747</omoprel:Has_marketed_form>
+        <omoprel:Has_marketed_form>OMOP:43735658</omoprel:Has_marketed_form>
+        <omoprel:Has_quantified_form>OMOP:42919946</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:42920145</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:42920718</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:43752448</omoprel:Has_quantified_form>
+        <omoprel:Has_quantified_form>OMOP:43843670</omoprel:Has_quantified_form>
+        <omoprel:Has_tradename>OMOP:2035461</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:35139038</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:35157878</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:42956837</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:42956838</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:42956839</omoprel:Has_tradename>
+        <omoprel:Has_tradename>OMOP:43661184</omoprel:Has_tradename>
+        <omoprel:Mapped_from>OMOP:501346</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:501346</omoprel:Maps_to>
+        <omoprel:RxNorm_has_dose_form>OMOP:19082103</omoprel:RxNorm_has_dose_form>
+        <omoprel:RxNorm_is_a>OMOP:36223599</omoprel:RxNorm_is_a>
+        <omoprel:RxNorm_is_a>OMOP:40045671</omoprel:RxNorm_is_a>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501347 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501347">
+        <rdfs:label>hepatitis B immune globulin 50 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>412675</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501415 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501415">
+        <rdfs:label>0.5 ML hepatitis B immune globulin 217 UNT/ML Prefilled Syringe [Bayhep B]</rdfs:label>
+        <OMOP:concept_class_id>Quant Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825138</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501416 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501416">
+        <rdfs:label>1 ML hepatitis B immune globulin 217 UNT/ML Prefilled Syringe</rdfs:label>
+        <OMOP:concept_class_id>Quant Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825139</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501418 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501418">
+        <rdfs:label>HEPATITIS B IMMUNE GLOBULIN 208 UNT/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>825145</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2010-07-04</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501419 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501419">
+        <rdfs:label>HEPATITIS B IMMUNE GLOBULIN 208 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825146</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501420 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501420">
+        <rdfs:label>HEPATITIS B IMMUNE GLOBULIN 208 UNT/ML Injectable Solution [Nabi-HB]</rdfs:label>
+        <OMOP:concept_class_id>Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825149</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501421 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501421">
+        <rdfs:label>hepatitis B immune globulin 220 UNT/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>825152</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501482 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501482">
+        <rdfs:label>hepatitis B immune globulin 220 UNT/ML Injectable Solution</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825153</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501483 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501483">
+        <rdfs:label>hepatitis B immune globulin 220 UNT/ML Injectable Solution [Hyperhep B]</rdfs:label>
+        <OMOP:concept_class_id>Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825156</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501484 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501484">
+        <rdfs:label>0.5 ML hepatitis B immune globulin 220 UNT/ML Prefilled Syringe</rdfs:label>
+        <OMOP:concept_class_id>Quant Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825157</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501485 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501485">
+        <rdfs:label>0.5 ML hepatitis B immune globulin 220 UNT/ML Prefilled Syringe [Hyperhep B]</rdfs:label>
+        <OMOP:concept_class_id>Quant Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825159</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501487 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501487">
+        <rdfs:label>1 ML hepatitis B immune globulin 220 UNT/ML Prefilled Syringe [Hyperhep B]</rdfs:label>
+        <OMOP:concept_class_id>Quant Branded Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>825161</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-11-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501488 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501488">
+        <rdfs:label>Hepatitis B Vaccine</rdfs:label>
+        <OMOP:concept_class_id>Ingredient</OMOP:concept_class_id>
+        <OMOP:concept_code>26746</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501523 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501523">
+        <rdfs:label>Hepatitis B Vaccine 0.01 MG/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>328556</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501524 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501524">
+        <rdfs:label>Hepatitis B Vaccine 0.02 MG/ML</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug Comp</OMOP:concept_class_id>
+        <OMOP:concept_code>328559</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2016-03-11</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/501528 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/501528">
+        <rdfs:label>0.5 ML HEPATITIS B VACCINE (RECOMBINANT) 0.02 MG/ML Prefilled Syringe</rdfs:label>
+        <OMOP:concept_class_id>Clinical Drug</OMOP:concept_class_id>
+        <OMOP:concept_code>763313</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2011-12-04</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2008-03-30</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/505117 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/505117">
+        <rdfs:label>intramuscular immunoglobulin</rdfs:label>
+        <OMOP:concept_class_id>Precise Ingredient</OMOP:concept_class_id>
+        <OMOP:concept_code>108067</OMOP:concept_code>
+        <OMOP:domain_id>Drug</OMOP:domain_id>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>RxNorm</OMOP:vocabulary_id>
+    </owl:Class>
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_class_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_class_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/concept_code -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/concept_code"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/domain_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/domain_id"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/invalid_reason -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/invalid_reason"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/standard_concept -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/standard_concept"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_end_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_end_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/valid_start_date -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/valid_start_date"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/vocabulary_id -->
+
+    <owl:AnnotationProperty rdf:about="https://athena.ohdsi.org/search-terms/terms/vocabulary_id"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Asso_finding_of -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Asso_finding_of"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Concept_poss_eq_from -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Concept_poss_eq_from"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Concept_replaces -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Concept_replaces"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Concept_same_as_from -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Concept_same_as_from"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Concept_was_a_from -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Concept_was_a_from"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Due_to_of -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Due_to_of"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Focus_of -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Focus_of"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Follows -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Follows"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_Module -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_Module"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_asso_morph -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_asso_morph"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_causative_agent -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_causative_agent"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_due_to -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_due_to"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_finding_site -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_finding_site"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_interpretation -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_interpretation"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_interprets -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_interprets"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_occurrence -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_occurrence"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_pathology -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_pathology"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Has_status -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Has_status"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Interpretation_of -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Interpretation_of"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Mapped_from -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Mapped_from"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Maps_to -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Maps_to"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Occurs_before -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Occurs_before"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/SNOMED_-_ind.CI -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/SNOMED_-_ind.CI"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Subsumes -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Subsumes"/>
+    
+
+
+    <!-- https://w3id.org/cpont/omop/relations/Value_mapped_from -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/cpont/omop/relations/Value_mapped_from"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/133303 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/133303"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/201728 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/201728"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22274 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22274">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4055265"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4316607"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4317831"/>
+        <rdfs:label>Neoplasm of uncertain behavior of larynx</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>94899001</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Concept_same_as_from>OMOP:40389883</omoprel:Concept_same_as_from>
+        <omoprel:Concept_was_a_from>OMOP:4099045</omoprel:Concept_was_a_from>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4313421</omoprel:Has_asso_morph>
+        <omoprel:Has_finding_site>OMOP:4262229</omoprel:Has_finding_site>
+        <omoprel:Has_status>OMOP:40642537</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:22274</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3121443</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3121447</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3375694</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:35206629</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40389883</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:4099045</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:44504911</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:44829869</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45547596</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45917689</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45940273</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22274</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:1553281</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:1553551</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:1553606</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:36518504</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:36523480</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:36544363</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:36548882</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:36552158</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:36556232</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4094108</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4094109</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4099043</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4099044</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4099498</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4315948</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4316490</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4316732</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22281 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22281">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4031662"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4048205"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4207240"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4213628"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4312008"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/434156"/>
+        <rdfs:label>Sickle cell-hemoglobin SS disease</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>127040003</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Asso_finding_of>OMOP:37310723</omoprel:Asso_finding_of>
+        <omoprel:Asso_finding_of>OMOP:40479193</omoprel:Asso_finding_of>
+        <omoprel:Asso_finding_of>OMOP:4050803</omoprel:Asso_finding_of>
+        <omoprel:Concept_replaces>OMOP:40626820</omoprel:Concept_replaces>
+        <omoprel:Concept_same_as_from>OMOP:40321273</omoprel:Concept_same_as_from>
+        <omoprel:Concept_same_as_from>OMOP:40361415</omoprel:Concept_same_as_from>
+        <omoprel:Concept_same_as_from>OMOP:40390035</omoprel:Concept_same_as_from>
+        <omoprel:Concept_was_a_from>OMOP:4098750</omoprel:Concept_was_a_from>
+        <omoprel:Concept_was_a_from>OMOP:4100993</omoprel:Concept_was_a_from>
+        <omoprel:Concept_was_a_from>OMOP:44799040</omoprel:Concept_was_a_from>
+        <omoprel:Due_to_of>OMOP:4021365</omoprel:Due_to_of>
+        <omoprel:Due_to_of>OMOP:4109401</omoprel:Due_to_of>
+        <omoprel:Due_to_of>OMOP:4334887</omoprel:Due_to_of>
+        <omoprel:Focus_of>OMOP:4014320</omoprel:Focus_of>
+        <omoprel:Focus_of>OMOP:40482271</omoprel:Focus_of>
+        <omoprel:Follows>OMOP:254062</omoprel:Follows>
+        <omoprel:Follows>OMOP:603017</omoprel:Follows>
+        <omoprel:Follows>OMOP:607429</omoprel:Follows>
+        <omoprel:Follows>OMOP:765385</omoprel:Follows>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4177967</omoprel:Has_asso_morph>
+        <omoprel:Has_causative_agent>OMOP:4178879</omoprel:Has_causative_agent>
+        <omoprel:Has_finding_site>OMOP:4218976</omoprel:Has_finding_site>
+        <omoprel:Has_interpretation>OMOP:4083207</omoprel:Has_interpretation>
+        <omoprel:Has_interprets>OMOP:4030871</omoprel:Has_interprets>
+        <omoprel:Has_interprets>OMOP:40480067</omoprel:Has_interprets>
+        <omoprel:Has_occurrence>OMOP:4116830</omoprel:Has_occurrence>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:1567844</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:22281</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3105189</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3122324</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3122325</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3122328</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3144511</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3163683</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3432757</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40321273</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40361415</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40390035</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40626820</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:4098750</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:4100993</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:42542233</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:44799040</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45542708</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45755365</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45919192</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45947025</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22281</omoprel:Maps_to>
+        <omoprel:Occurs_before>OMOP:254062</omoprel:Occurs_before>
+        <omoprel:Subsumes>OMOP:26942</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:30683</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4121115</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4131914</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:44799040</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:45757146</omoprel:Subsumes>
+        <omoprel:Value_mapped_from>OMOP:3530067</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3542412</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:40479193</omoprel:Value_mapped_from>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22288 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22288">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/28396"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4079975"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4122936"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4175331"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4180651"/>
+        <rdfs:label>Hereditary elliptocytosis</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>191169008</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Concept_poss_eq_from>OMOP:40321689</omoprel:Concept_poss_eq_from>
+        <omoprel:Concept_poss_eq_from>OMOP:40351344</omoprel:Concept_poss_eq_from>
+        <omoprel:Concept_poss_eq_from>OMOP:40607536</omoprel:Concept_poss_eq_from>
+        <omoprel:Concept_same_as_from>OMOP:4076717</omoprel:Concept_same_as_from>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4259404</omoprel:Has_asso_morph>
+        <omoprel:Has_finding_site>OMOP:4218976</omoprel:Has_finding_site>
+        <omoprel:Has_interpretation>OMOP:4083207</omoprel:Has_interpretation>
+        <omoprel:Has_interpretation>OMOP:4181412</omoprel:Has_interpretation>
+        <omoprel:Has_interprets>OMOP:4030871</omoprel:Has_interprets>
+        <omoprel:Has_interprets>OMOP:40480067</omoprel:Has_interprets>
+        <omoprel:Has_interprets>OMOP:4224294</omoprel:Has_interprets>
+        <omoprel:Has_occurrence>OMOP:4116830</omoprel:Has_occurrence>
+        <omoprel:Has_pathology>OMOP:4204670</omoprel:Has_pathology>
+        <omoprel:Has_status>OMOP:40642537</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:22288</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3161215</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3362850</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3411218</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:35206727</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40607536</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:4076717</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:44820697</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45571636</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45915819</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22288</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:36715351</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4034711</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4125633</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4218794</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4228681</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4243676</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4281394</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4327824</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:607421</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22340 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22340">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/24966"/>
+        <rdfs:label>Esophageal varices without bleeding</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>14223005</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4029830</omoprel:Has_asso_morph>
+        <omoprel:Has_finding_site>OMOP:4237655</omoprel:Has_finding_site>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:22340</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3383154</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45562429</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45572150</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45581834</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45947382</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22340</omoprel:Maps_to>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22350 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22350">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/31602"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4040388"/>
+        <rdfs:label>Edema of larynx</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>51599000</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Concept_same_as_from>OMOP:40316094</omoprel:Concept_same_as_from>
+        <omoprel:Concept_was_a_from>OMOP:3534687</omoprel:Concept_was_a_from>
+        <omoprel:Concept_was_a_from>OMOP:4112516</omoprel:Concept_was_a_from>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4196943</omoprel:Has_asso_morph>
+        <omoprel:Has_finding_site>OMOP:4262229</omoprel:Has_finding_site>
+        <omoprel:Has_status>OMOP:40642537</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:22350</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3105881</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3124911</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3376719</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:35208003</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3534687</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40316094</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:4112516</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:44826669</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45533550</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45910004</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22350</omoprel:Maps_to>
+        <omoprel:SNOMED_-_ind.CI>OMOP:4267181</omoprel:SNOMED_-_ind.CI>
+        <omoprel:Subsumes>OMOP:4009044</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4048307</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4049244</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4179625</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4336537</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22426 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22426">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/133303"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/35624868"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/42709918"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/43530620"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/439394"/>
+        <rdfs:label>Congenital macrostomia</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>40159009</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Asso_finding_of>OMOP:4081290</omoprel:Asso_finding_of>
+        <omoprel:Concept_poss_eq_from>OMOP:40403664</omoprel:Concept_poss_eq_from>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4154268</omoprel:Has_asso_morph>
+        <omoprel:Has_due_to>OMOP:4211668</omoprel:Has_due_to>
+        <omoprel:Has_finding_site>OMOP:4307655</omoprel:Has_finding_site>
+        <omoprel:Has_occurrence>OMOP:4116830</omoprel:Has_occurrence>
+        <omoprel:Has_pathology>OMOP:4204670</omoprel:Has_pathology>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:22426</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3129519</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3368381</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:35210785</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40403664</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:44823393</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45572950</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45929752</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22426</omoprel:Maps_to>
+        <omoprel:SNOMED_-_ind.CI>OMOP:4342572</omoprel:SNOMED_-_ind.CI>
+        <omoprel:Subsumes>OMOP:35624348</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:35624349</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:36717654</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22492 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22492">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/201728"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/31057"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4029819"/>
+        <rdfs:label>Foreign body in pharynx</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>25479004</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Concept_poss_eq_from>OMOP:40491627</omoprel:Concept_poss_eq_from>
+        <omoprel:Concept_same_as_from>OMOP:40316113</omoprel:Concept_same_as_from>
+        <omoprel:Concept_was_a_from>OMOP:4051911</omoprel:Concept_was_a_from>
+        <omoprel:Due_to_of>OMOP:3655478</omoprel:Due_to_of>
+        <omoprel:Due_to_of>OMOP:3655479</omoprel:Due_to_of>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4078373</omoprel:Has_asso_morph>
+        <omoprel:Has_finding_site>OMOP:4207370</omoprel:Has_finding_site>
+        <omoprel:Has_status>OMOP:40642537</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:1574239</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:1574240</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:1574243</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:16623</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:16624</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:16627</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:16628</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:16629</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:16630</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:22492</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3107730</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3133296</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3392883</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40316113</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:4051911</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:44822464</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45536472</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45536473</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45541252</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45546098</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45550907</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45550909</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45550910</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45555710</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45560436</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45570146</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45575020</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45579835</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45599176</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45916168</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22492</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:4055062</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4095864</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4109074</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4176141</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4201575</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4322546</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4323069</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4325215</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4330854</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/22557 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/22557">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4112584"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4130378"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4181333"/>
+        <rdfs:label>Malignant tumor of submandibular gland</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>363380002</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_asso_morph>OMOP:4282379</omoprel:Has_asso_morph>
+        <omoprel:Has_finding_site>OMOP:4299196</omoprel:Has_finding_site>
+        <omoprel:Has_status>OMOP:40642537</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:22557</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3300629</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45940752</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:22557</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:4312691</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/24966 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/24966"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/28396 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/28396"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/31057 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/31057"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/31602 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/31602"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/35624868 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/35624868"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4021604 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4021604"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4024142 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4024142"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4029819 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4029819"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4031662 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4031662"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4040388 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4040388"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4048205 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4048205"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4055265 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4055265"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4079975 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4079975"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4112584 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4112584"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4122936 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4122936"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4128650 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4128650"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4130378 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4130378"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4154199 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4154199"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4157699 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4157699"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4175331 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4175331"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4180651 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4180651"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4181333 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4181333"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4181412 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4181412"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4207240 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4207240"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4213628 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4213628"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/42709918 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/42709918"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4312008 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4312008"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4316607 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4316607"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/4317831 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/4317831"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/434156 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/434156"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/43530620 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/43530620"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/439394 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/439394"/>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/8715 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/8715">
+        <rdfs:label>Hospital admission</rdfs:label>
+        <OMOP:concept_class_id>Procedure</OMOP:concept_class_id>
+        <OMOP:concept_code>32485007</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9173 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9173">
+        <rdfs:label>Inactive</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>73425007</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9174 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9174">
+        <rdfs:label>Obsolete</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>41228009</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9175 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9175">
+        <rdfs:label>UNKNOWN</rdfs:label>
+        <OMOP:concept_class_id>Patient Status</OMOP:concept_class_id>
+        <OMOP:concept_code>261665005</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:invalid_reason>D</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2013-01-30</OMOP:valid_end_date>
+        <OMOP:valid_start_date>1970-01-01</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9176 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9176">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4021604"/>
+        <rdfs:label>Patient status determination, deceased</rdfs:label>
+        <OMOP:concept_class_id>Clinical Finding</OMOP:concept_class_id>
+        <OMOP:concept_code>18632008</OMOP:concept_code>
+        <OMOP:domain_id>Condition</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Mapped_from>OMOP:3260790</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:9176</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:9176</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:764036</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:764037</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:764038</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:764039</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:764467</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:765882</omoprel:Subsumes>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9177 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9177">
+        <rdfs:label>Other</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>74964007</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9181 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9181">
+        <rdfs:label>Active</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>55561003</OMOP:concept_code>
+        <OMOP:domain_id>Observation</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9188 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9188">
+        <rdfs:label>Final report</rdfs:label>
+        <OMOP:concept_class_id>Admin Concept</OMOP:concept_class_id>
+        <OMOP:concept_code>281321000</OMOP:concept_code>
+        <OMOP:domain_id>Type Concept</OMOP:domain_id>
+        <OMOP:invalid_reason>U</OMOP:invalid_reason>
+        <OMOP:valid_end_date>2010-07-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9189 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9189">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4157699"/>
+        <rdfs:label>Negative</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>260385009</OMOP:concept_code>
+        <OMOP:domain_id>Meas Value</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Concept_poss_eq_from>OMOP:40642212</omoprel:Concept_poss_eq_from>
+        <omoprel:Concept_replaces>OMOP:40564215</omoprel:Concept_replaces>
+        <omoprel:Concept_replaces>OMOP:40567548</omoprel:Concept_replaces>
+        <omoprel:Concept_replaces>OMOP:40642212</omoprel:Concept_replaces>
+        <omoprel:Concept_same_as_from>OMOP:40564215</omoprel:Concept_same_as_from>
+        <omoprel:Concept_same_as_from>OMOP:40567548</omoprel:Concept_same_as_from>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Interpretation_of>OMOP:3548095</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3548101</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:35609078</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:35610315</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:35626056</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3661413</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37206941</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37207808</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37207809</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37207810</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37209328</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37310779</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013098</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013099</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013105</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013111</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013366</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013370</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013548</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013556</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013667</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013969</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4014116</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4014120</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4035612</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4035743</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4041162</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4041882</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4041884</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4043248</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40479848</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40480440</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40480891</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40481544</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40482469</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40482639</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40483306</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055286</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055303</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055409</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055822</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055828</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056268</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056277</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056286</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056387</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056390</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056409</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056529</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056532</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056864</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057302</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057305</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057306</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057316</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057745</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4058632</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059219</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059221</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059228</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059235</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059237</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4063592</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064471</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064728</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064890</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4065543</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4065790</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4083556</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4092937</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4094309</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4094420</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4094448</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4095346</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4097609</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4097619</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4101830</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4115740</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4121319</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4132810</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4133516</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4135664</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4136450</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4141413</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4147567</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4147568</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4147732</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4148819</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4148822</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149239</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149307</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149310</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149312</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151012</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151014</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151015</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151016</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151184</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4152987</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4153213</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4155234</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4155376</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4163270</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4183507</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4188678</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4193267</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4198267</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4198285</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4200294</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4206444</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4207759</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4207941</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4215263</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4227248</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4227250</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4230155</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4234024</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4234921</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4235562</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4247126</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537340</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537344</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537965</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42538063</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42538065</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42538133</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42539075</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4256240</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4256241</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4258130</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4260111</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4260750</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4268296</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:43020419</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:43530843</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44782793</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44788843</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44789012</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44789013</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44789014</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44789015</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44789016</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44790366</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44790896</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44790981</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44793058</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44793059</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44806200</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44810400</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44810726</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44810879</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44812671</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44812672</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44813245</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45765765</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45766778</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45767636</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45769460</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273322</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273326</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601039</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601040</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601041</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601042</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601043</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601044</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601045</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601046</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601047</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601048</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:603308</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:604442</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608034</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608043</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608044</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608076</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608809</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608810</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608811</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608812</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:762503</omoprel:Interpretation_of>
+        <omoprel:Mapped_from>OMOP:3155910</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3156644</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3164233</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3433191</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40564215</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40567548</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40642212</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45912103</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45919642</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:9189</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:9189</omoprel:Maps_to>
+        <omoprel:Value_mapped_from>OMOP:3548095</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3548101</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3561686</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:45571328</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:604442</omoprel:Value_mapped_from>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9190 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9190">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4157699"/>
+        <rdfs:label>Not detected</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>260415000</OMOP:concept_code>
+        <OMOP:domain_id>Meas Value</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Interpretation_of>OMOP:3548086</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3548087</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3548092</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3561694</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36713980</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36714517</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36717757</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37208074</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37208075</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37208076</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37208086</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37208088</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37208093</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37310281</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37396296</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37396306</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37396490</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37397734</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37399518</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537908</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273956</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601774</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:602246</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764066</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764067</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764081</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764391</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764933</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764938</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764942</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764950</omoprel:Interpretation_of>
+        <omoprel:Mapped_from>OMOP:3439464</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45906206</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45947515</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:9190</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:9190</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:3661867</omoprel:Subsumes>
+        <omoprel:Subsumes>OMOP:4125557</omoprel:Subsumes>
+        <omoprel:Value_mapped_from>OMOP:3548086</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3548087</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3548092</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3561694</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:37310281</omoprel:Value_mapped_from>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9191 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9191">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4024142"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4128650"/>
+        <rdfs:label>Positive</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>10828004</OMOP:concept_code>
+        <OMOP:domain_id>Meas Value</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Concept_replaces>OMOP:40564213</omoprel:Concept_replaces>
+        <omoprel:Concept_replaces>OMOP:40567546</omoprel:Concept_replaces>
+        <omoprel:Concept_same_as_from>OMOP:40564213</omoprel:Concept_same_as_from>
+        <omoprel:Concept_same_as_from>OMOP:40567546</omoprel:Concept_same_as_from>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Interpretation_of>OMOP:313223</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3548094</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3548100</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:35609079</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:35610330</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:35626055</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3655530</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3655543</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:3661531</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36676230</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36676231</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36713662</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36713961</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36714516</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36714969</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:36717114</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37016864</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37017341</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37017465</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37017467</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37019064</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37108570</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37108571</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37108573</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37108574</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37108575</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37108693</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37108714</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37109025</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37110293</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37117106</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37117644</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37206940</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37207804</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37207805</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37207806</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37207807</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37208137</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37209329</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37309675</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:37310780</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013106</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013257</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013258</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013259</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013263</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013265</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013367</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013380</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013546</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4013974</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4014007</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4035611</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4041878</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4042412</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4043427</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4043429</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4043943</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40480043</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40480491</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40480858</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40480896</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40480941</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40481365</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4048178</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40482269</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40482828</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40483293</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40483773</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40483774</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40484477</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40484945</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40484954</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40484956</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:40484957</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4048502</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055304</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056260</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056265</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056267</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056278</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056279</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056285</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056388</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056394</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056411</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056525</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4056528</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057304</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057314</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057317</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057320</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4057433</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059222</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059225</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059226</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4059232</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4062567</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064102</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064473</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064631</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064889</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064983</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4064988</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4065521</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4065644</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4090315</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4094308</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4094419</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4094768</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4094910</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4095347</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4095355</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4095476</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4102572</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4104307</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4115739</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4120297</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4122119</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4132809</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4133514</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4133775</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4135410</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4135411</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4145477</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4147418</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4147570</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4148821</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149300</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149301</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149302</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149306</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149308</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4149309</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151011</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151013</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151018</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151019</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151185</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151186</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151410</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4151893</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4152973</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4154688</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4158242</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4178483</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4181070</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4186150</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4194587</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4195804</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4196134</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4198266</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4206443</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4207297</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4212724</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4227247</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4235563</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4247368</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4247369</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4249696</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4252869</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42534999</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42535207</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42535396</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42535667</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42535668</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42535714</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42536590</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42536591</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42536592</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42536593</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42536594</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42536595</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42536596</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537336</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537343</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537802</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537803</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537804</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537805</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42537964</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42538064</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42538066</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42538134</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42538948</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42539031</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:42539197</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4261071</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4265485</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:43021839</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:432561</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4328024</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:433705</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4344168</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4344489</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4344490</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4344492</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4344493</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:43531689</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:435465</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:436624</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:439729</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:441507</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:443430</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:443708</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:443712</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:443713</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44788837</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44788838</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44788839</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44788841</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44788842</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44788879</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44790263</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44790895</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44790984</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44793053</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44793057</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44810401</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44810724</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44810800</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44812284</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:44813404</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45757380</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45757381</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45765766</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45765767</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:45766779</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46270040</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46270072</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46270075</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46270103</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46270738</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273057</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273315</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273325</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273413</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46273598</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:46274008</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:600510</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:600511</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:600512</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601030</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601031</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601032</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601033</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601034</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601035</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601036</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601037</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601038</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:601348</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:602587</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:603298</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:603299</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:603300</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:603301</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:603302</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:603309</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:604441</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:604772</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:604781</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:604782</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:604976</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:605091</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:605413</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:605414</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:605904</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:606328</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:607078</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608035</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608041</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608042</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608075</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608132</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:608813</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:609024</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:609061</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:72381</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:73526</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:762504</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:763925</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764925</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:764926</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:76761</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:80156</omoprel:Interpretation_of>
+        <omoprel:Mapped_from>OMOP:3059742</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3156642</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:3448973</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40564213</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:40567546</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45935785</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:9191</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:9191</omoprel:Maps_to>
+        <omoprel:Subsumes>OMOP:4127785</omoprel:Subsumes>
+        <omoprel:Value_mapped_from>OMOP:1525049</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3548094</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3548100</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3561684</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:3561698</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:44826987</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:44836307</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:45576138</omoprel:Value_mapped_from>
+        <omoprel:Value_mapped_from>OMOP:604441</omoprel:Value_mapped_from>
+    </owl:Class>
+    
+
+
+    <!-- https://athena.ohdsi.org/search-terms/terms/9192 -->
+
+    <owl:Class rdf:about="https://athena.ohdsi.org/search-terms/terms/9192">
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4154199"/>
+        <rdfs:subClassOf rdf:resource="https://athena.ohdsi.org/search-terms/terms/4181412"/>
+        <rdfs:label>Trace</rdfs:label>
+        <OMOP:concept_class_id>Qualifier Value</OMOP:concept_class_id>
+        <OMOP:concept_code>260405006</OMOP:concept_code>
+        <OMOP:domain_id>Meas Value</OMOP:domain_id>
+        <OMOP:standard_concept>S</OMOP:standard_concept>
+        <OMOP:valid_end_date>2099-12-31</OMOP:valid_end_date>
+        <OMOP:valid_start_date>2002-01-31</OMOP:valid_start_date>
+        <OMOP:vocabulary_id>SNOMED</OMOP:vocabulary_id>
+        <omoprel:Has_Module>OMOP:40642539</omoprel:Has_Module>
+        <omoprel:Has_status>OMOP:40642538</omoprel:Has_status>
+        <omoprel:Interpretation_of>OMOP:4041885</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4041893</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055288</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055292</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055295</omoprel:Interpretation_of>
+        <omoprel:Interpretation_of>OMOP:4055824</omoprel:Interpretation_of>
+        <omoprel:Mapped_from>OMOP:3472281</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:45933728</omoprel:Mapped_from>
+        <omoprel:Mapped_from>OMOP:9192</omoprel:Mapped_from>
+        <omoprel:Maps_to>OMOP:9192</omoprel:Maps_to>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+
