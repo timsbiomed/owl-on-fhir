@@ -199,9 +199,11 @@ def owl_to_fhir(
     retain_intermediaries=False, intermediary_type=['obographs', 'semsql'][0], use_cached_intermediaries=False,
     intermediary_outdir: str = None, convert_intermediaries_only=False, native_uri_stems: List[str] = None,
     code_system_id: str = None, code_system_url: str = None, dev_oak_path: str = None,
-    dev_oak_interpreter_path: str = None
+    dev_oak_interpreter_path: str = None, rxnorm_bioportal=False
 ) -> str:
-    """Run conversion"""
+    """Run conversion
+
+    :param rxnorm_bioportal: Special custom case. Set True if the file being processed is RxNorm.ttl from BioPortal."""
     include_all_predicates = not include_only_critical_predicates
 
     if not os.path.exists(CACHE_DIR):
@@ -233,7 +235,7 @@ def owl_to_fhir(
     intermediary_outdir = intermediary_outdir if intermediary_outdir else out_dir
 
     # Preprocessing: Special cases
-    if 'rxnorm' in input_path.lower() or 'rxnorm' in out_filename.lower():
+    if rxnorm_bioportal:
         input_path = _preprocess_rxnorm(input_path)
 
     # Convert
