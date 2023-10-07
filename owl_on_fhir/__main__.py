@@ -1,20 +1,24 @@
 """Convert OWL to FHIR"""
-import json
 import os
+import re
 import shutil
 import subprocess
+import sys
 from argparse import ArgumentParser
-from pathlib import PosixPath
+from pathlib import Path
 from typing import Dict, List, Union
 
 import curies
 import requests
+import yaml
 from linkml_runtime.loaders import json_loader
 from oaklib.converters.obo_graph_to_fhir_converter import OboGraphToFHIRConverter
 from oaklib.datamodels.obograph import GraphDocument
 from oaklib.interfaces.basic_ontology_interface import get_default_prefix_map
 from urllib.parse import urlparse
 
+from sssom.parsers import parse_sssom_table
+from sssom.writers import write_fhir_json
 
 # Vars
 # - Vars: Static
@@ -23,11 +27,10 @@ BIN_DIR = SRC_DIR
 PROJECT_DIR = os.path.join(SRC_DIR, '..')
 CACHE_DIR = os.path.join(PROJECT_DIR, 'cache')
 ROBOT_PATH = os.path.join(BIN_DIR, 'robot.jar')
-INTERMEDIARY_TYPES = ['obographs', 'semsql']
 
 
 # Functions
-def _run_shell_command(command: str, cwd_outdir: str = None) -> subprocess.CompletedProcess:
+def _run_shell_command(command: str, cwd_outdir: str = None, verbose=False) -> subprocess.CompletedProcess:
     """Runs a command in the shell, and handles some common errors"""
     args = command.split(' ')
     if cwd_outdir:
@@ -37,12 +40,15 @@ def _run_shell_command(command: str, cwd_outdir: str = None) -> subprocess.Compl
     stderr, stdout = result.stderr, result.stdout
     if stderr and 'Unable to create a system terminal, creating a dumb terminal' not in stderr:
         raise RuntimeError(stderr)
-    elif stdout and 'error' in stdout or 'ERROR' in stdout:
+    elif stdout and 'error' in stdout.lower() or 'exception' in stdout.lower():
         raise RuntimeError(stdout)
     elif stdout and 'make: Nothing to be done' in stdout:
         raise RuntimeError(stdout)
     elif stdout and ".db' is up to date" in stdout:
         raise FileExistsError(stdout)
+    if verbose:
+        print(stdout)
+        print(stderr, file=sys.stderr)
     return result
 
 
@@ -79,34 +85,6 @@ def download(url: str, path: str, save_to_cache=False, download_if_cached=True):
         shutil.copy(path, cache_path)
 
 
-# todo: owl_to_semsql: this may need similar updates to caching that were done for obographs on 2023/04/15
-def owl_to_semsql(inpath: str, use_cache=False) -> str:
-    """Converts OWL (or RDF, I think) to a SemanticSQL sqlite DB.
-    Docs: https://incatools.github.io/ontology-access-kit/intro/tutorial07.html?highlight=semsql
-    - Had to change "--rm -ti"  --> "--rm"
-    todo: consider using linkml/semantic-sql image which is more up-to-date instead
-      https://github.com/INCATools/semantic-sql
-      docker run  -v $PWD:/work -w /work -ti linkml/semantic-sql semsql make foo.db
-    todo: RDF also supported? not just OWL? (TTL not supported)
-    """
-    # Vars
-    _dir = os.path.dirname(inpath)
-    output_filename = os.path.basename(inpath).replace('.owl', '.db').replace('.rdf', '.db').replace('.ttl', '.db')
-    outpath = os.path.join(_dir, output_filename)
-    command_str = f'docker run -w /work -v {_dir}:/work --rm obolibrary/odkfull:dev semsql make {output_filename}'
-
-    # Convert
-    if use_cache and os.path.exists(outpath):
-        return outpath
-    try:
-        _run_shell_command(command_str, cwd_outdir=_dir)
-    except FileExistsError:
-        if not use_cache:
-            os.remove(outpath)
-            _run_shell_command(command_str, cwd_outdir=_dir)
-    return outpath
-
-
 def owl_to_obograph(inpath: str, out_dir: str, use_cache=False, cache_output=False) -> str:
     """Convert OWL to Obograph
     todo: TTL and RDF also supported? not just OWL?"""
@@ -133,10 +111,6 @@ def owl_to_obograph(inpath: str, out_dir: str, use_cache=False, cache_output=Fal
     return outpath
 
 
-# todo: This doesn't work until following Obographs issues solved. Moved to semsql intermediary for now.
-#  - https://github.com/linkml/linkml/issues/1156
-#  - https://github.com/ontodev/robot/issues/1079
-#  - https://github.com/geneontology/obographs/issues/89
 def obograph_to_fhir(
     inpath: str, out_dir: str, out_filename: str = None, code_system_id: str = None, code_system_url: str = None,
     include_all_predicates=True, native_uri_stems: List[str] = None, dev_oak_path: str = None,
@@ -165,6 +139,8 @@ def obograph_to_fhir(
         converter = OboGraphToFHIRConverter()
         converter.curie_converter = curies.Converter.from_prefix_map(get_default_prefix_map())
         gd: GraphDocument = json_loader.load(str(inpath), target_class=GraphDocument)
+        # TODO: when OAK supports
+        #   - add these params once supported: use_curies_native_concepts, use_curies_foreign_concepts
         converter.dump(
             gd,
             out_path,
@@ -172,34 +148,66 @@ def obograph_to_fhir(
             code_system_url=code_system_url,
             include_all_predicates=include_all_predicates,
             native_uri_stems=native_uri_stems)
-        # TODO: add these params once supported: use_curies_native_concepts, use_curies_foreign_concepts
-        # converter.dump(
-        #     gd, out_path, code_system_id='', code_system_url='', include_all_predicates=include_all_predicates,
-        #     native_uri_stems=native_uri_stems, use_curies_native_concepts=False, use_curies_foreign_concepts=True)
+            # use_curies_native_concepts,
+            # use_curies_foreign_concepts)
     return out_path
 
 
-# todo: add local dev oak params to this and abstract a general 'run oak' func for this and obographs_to_fhir
-def semsql_to_fhir(inpath: str, out_dir: str, out_filename: str = None, include_all_predicates=False) -> str:
-    """Convert SemanticSQL sqlite DB to FHIR"""
-    # todo: any way to do this using Python API?
-    # todo: do I need some way of supplying prefix_map? check: are outputs all URIs?
-    # converter.curie_converter = curies.Converter.from_prefix_map(get_default_prefix_map())
-    out_path = os.path.join(out_dir, out_filename)
-    if not os.path.exists(out_dir):
-        os.makedirs(out_dir)
-    preds_flag = ' --include-all-predicates' if include_all_predicates else ''
-    command_str = f'runoak -i sqlite:{inpath} dump -o {out_path} -O fhirjson{preds_flag}'
-    _run_shell_command(command_str)
-    return out_path  # todo: When OAK changes to save multiple files, return out_dir
+def write_concept_maps(obograph_path: str, owl_path: str, outdir: str = None, code_system_id: str = None, verbose=True):
+    """"From an Obograph JSON, convert to SSSOM, then convert to 1+ ConceptMap JSON"""
+    # Vars
+    outdir = outdir or obograph_path
+    outdir = outdir if os.path.isdir(outdir) else os.path.dirname(outdir)
+    # todo: ascertaining code_system_id: could be more combinations like - or _ obographs
+    code_system_id = code_system_id or os.path.basename(obograph_path)\
+        .replace(".obographs", "").replace(".obograph", "").replace(".json", "")
+    outpath_sssom = os.path.join(outdir, f"{code_system_id}.sssom.tsv")
+
+    # Create metadata.sssom.yml
+    outpath_metadata = os.path.join(outdir, f'{code_system_id}-metadata.sssom.yml')
+    pattern = r'xmlns:.*'
+    standard_namespaces = ['owl', 'rdf', 'rdfs', 'xml', 'xsd']
+    with open(owl_path, 'r') as file:
+        contents = file.read()
+    matches: List[str] = re.findall(pattern, contents)
+    matches = [x[:-1] if x.endswith('>') else x for x in matches]
+    matches = [x.replace('xmlns:', '') for x in matches]
+    matches_dict = {}
+    for m in matches:
+        k, v = m.split('=')
+        if k not in standard_namespaces:
+            matches_dict[k] = v[1:-1]  # removes leading/trailing "
+    metadata = {
+        'curie_map': matches_dict,
+        'license': 'https://w3id.org/sssom/license/unspecified',
+    }
+    yaml_string = yaml.dump(metadata)
+    with open(outpath_metadata, 'w') as file:
+        file.write(yaml_string)
+
+    print('Converting: Obographs -> SSSSOM')
+    # todo: is there a way to do this via Python API? would be better
+    command_str = f'sssom parse {obograph_path} -I obographs-json -o {outpath_sssom} -m {outpath_metadata}'
+    # TODO #1: automate this:
+    #  - (1) here: accept param for mapping-predicate-filter, (2) omop2fhir: hard code a short list
+    #  - convert CURIEs to URIs if need be
+    command_str += ' --mapping-predicate-filter https://w3id.org/cpont/omop/relations/Mapped_from --mapping-predicate-filter https://w3id.org/cpont/omop/relations/Maps_to'
+    _run_shell_command(command_str, verbose=verbose)
+
+    # todo: outpath_concept_map: temporary. in next sssom update, will be outdir cuz 2+ maps
+    print('Converting: SSSOM -> ConceptMaps')
+    outpath_concept_map = os.path.join(outdir, f'ConceptMap-{code_system_id}.json')
+    df = parse_sssom_table(outpath_sssom)
+    with open(outpath_concept_map, "w") as file:
+        write_fhir_json(df, file)
 
 
 def owl_to_fhir(
-    input_path_or_url: Union[str, PosixPath], out_dir: str = None, out_filename: str = None, include_only_critical_predicates=False,
-    retain_intermediaries=False, intermediary_type=['obographs', 'semsql'][0], use_cached_intermediaries=False,
+    input_path_or_url: Union[str, Path], out_dir: Union[str, Path] = None, out_filename: str = None,
+    include_only_critical_predicates=False, retain_intermediaries=False, use_cached_intermediaries=False,
     intermediary_outdir: str = None, convert_intermediaries_only=False, native_uri_stems: List[str] = None,
     code_system_id: str = None, code_system_url: str = None, dev_oak_path: str = None,
-    dev_oak_interpreter_path: str = None, rxnorm_bioportal=False
+    dev_oak_interpreter_path: str = None, rxnorm_bioportal=False, include_codesystem=True, include_conceptmap=True
 ) -> str:
     """Run conversion
 
@@ -216,7 +224,7 @@ def owl_to_fhir(
     input_path = input_path_or_url
     url = None
     maybe_url = urlparse(input_path_or_url)
-    out_dir = out_dir if out_dir else os.getcwd()
+    out_dir = str(out_dir) if out_dir else os.getcwd()
     if out_dir.startswith('~'):
         out_dir = os.path.expanduser('~/Desktop')
     if maybe_url.scheme and maybe_url.netloc:
@@ -238,35 +246,33 @@ def owl_to_fhir(
     if rxnorm_bioportal:
         input_path = _preprocess_rxnorm(input_path)
 
-    # Convert
-    if intermediary_type == 'obographs' or input_path.endswith('.ttl'):  # semsql only supports .owl
-        intermediary_path = owl_to_obograph(input_path, out_dir, use_cached_intermediaries, use_cached_intermediaries)
-        obograph_to_fhir(
+    # Convert intermediary: Obograph
+    intermediary_path = owl_to_obograph(input_path, out_dir, use_cached_intermediaries, use_cached_intermediaries)
+    if convert_intermediaries_only:
+        return intermediary_path
+
+    # Convert: CodeSystem
+    if include_codesystem:
+        cs_outpath: str = obograph_to_fhir(
             inpath=intermediary_path, out_dir=intermediary_outdir, out_filename=out_filename,
             code_system_id=code_system_id, code_system_url=code_system_url, native_uri_stems=native_uri_stems,
             include_all_predicates=include_all_predicates, dev_oak_path=dev_oak_path,
             dev_oak_interpreter_path=dev_oak_interpreter_path)
-    else:  # semsql
-        # todo: owl_to_semsql: this may need similar updates to caching that were done for obographs on 2023/04/15
-        intermediary_path = owl_to_semsql(input_path, use_cached_intermediaries)
-        semsql_to_fhir(
-            inpath=intermediary_path, out_dir=intermediary_outdir, out_filename=out_filename,
-            include_all_predicates=include_all_predicates)
-    if convert_intermediaries_only:
-        return intermediary_path
+        # TODO #2: temporary fixes
+        #   - when OAK updated, revert these changes here
+        with open(cs_outpath, 'r') as f:
+            cs = f.read()
+            cs = cs.replace('"type": "packages",', '"type": "code",')
+        with open(cs_outpath, 'w') as f:
+            f.write(cs)
+
+    # Convert: ConceptMap
+    if include_conceptmap:
+        write_concept_maps(intermediary_path, input_path, out_dir, code_system_id)
 
     # Cleanup
-    indir = os.path.dirname(input_path)
-    template_db_path = os.path.join(indir, '.template.db')
-    if os.path.exists(template_db_path):
-        os.remove(template_db_path)
     if not retain_intermediaries:
-        # noinspection PyUnboundLocalVariable
         os.remove(intermediary_path)
-        if intermediary_type == 'semsql':
-            # More semsql intermediaries
-            intermediary_filename = os.path.basename(intermediary_path)
-            os.remove(os.path.join(indir, intermediary_filename.replace('.db', '-relation-graph.tsv.gz')))
     return os.path.join(out_dir, out_filename)
 
 
@@ -282,7 +288,7 @@ def cli():
              "See: https://hl7.org/fhir/resource-definitions.html#Resource.id")
     parser.add_argument(
         '-S', '--code-system-url', required=True, default=False,
-        help="Canonical URL for the code system. "
+        help="Canonical URL for the code system.  "
              "See: https://hl7.org/fhir/codesystem-definitions.html#CodeSystem.url")
     parser.add_argument(
         '-u', '--native-uri-stems', required=True, nargs='+',
@@ -293,6 +299,16 @@ def cli():
              ' being converted. This converter adds back the nodes, but to know which ones belong to the CodeSystem '
              'itself and are not foreign concepts, this parameter is necessary. OAK also makes use of this parameter. '
              'See also: https://github.com/geneontology/obographs/issues/90')
+    # TODO: activate these and pass them down when OAK supports
+    # parser.add_argument(
+    #     '-N', '--use-curies-native-concepts', action='store_true', required=False, default=True,
+    #     help='FHIR conventionally uses codes for references to concepts that are native to a given CodeSystem. With
+    #     this option, references will be CURIEs instead.')
+    # parser.add_argument(
+    #     '-F', '--use-curies-foreign-concepts', action='store_true', required=False, default=True,
+    #     help='Typical FHIR CodeSystems do not contain any concepts that are not native to that CodeSystem. In cases
+    #     where they do appear, this converter defaults to URIs for references, unless this flag is present, in which
+    #     case the converter will attempt to construct CURIEs.')
     parser.add_argument(
         '-o', '--out-dir', required=False, default=os.getcwd(),
         help='Output directory. Defaults to current working directory.')
@@ -302,10 +318,6 @@ def cli():
         '-p', '--include-only-critical-predicates', action='store_true', required=False, default=False,
         help='If present, includes only critical predicates (is_a/parent) rather than all predicates in '
              'CodeSystem.property and CodeSystem.concept.property.')
-    parser.add_argument(
-        '-t', '--intermediary-type', choices=INTERMEDIARY_TYPES, default='obographs', required=False,
-        help='Which type of intermediary to use? First, we convert OWL to that intermediary format, and then we '
-             'convert that to FHIR.')
     parser.add_argument(
         '-c', '--use-cached-intermediaries', action='store_true', required=False, default=False,
         help='Use cached intermediaries if they exist? Also will save intermediaries to owl-on-fhir\'s cache/ dir.')

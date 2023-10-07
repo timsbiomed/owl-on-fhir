@@ -170,6 +170,7 @@ urllib3==1.26.14
 validators==0.20.0
 virtualenv==20.17.1
 virtualenv-clone==0.5.7
+virtualenvwrapper==4.8.4
 watchdog==2.2.1
 webcolors==1.12
 webencodings==0.5.1
