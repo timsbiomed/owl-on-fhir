@@ -15,13 +15,14 @@ URL = 'https://github.com/HOT-Ecosystem/owl-on-fhir/'
 EMAIL = 'jflack@jhu.edu'
 AUTHOR = 'Joe Flack'
 REQUIRES_PYTHON = '>=3.9.0'
-VERSION = '1.0.1'
+VERSION = '1.1.1'
 
 # Requirements
 REQUIRED = [
     'bioontologies',
     'oaklib>=0.5.1',
     'requests>2.28.2',
+    'sssom'
 ]
 
 # Description

@@ -22,3 +22,4 @@ ignored/
 .DS_Store
 MANIFEST
 tags
+output/
